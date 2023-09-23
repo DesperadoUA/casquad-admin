@@ -1,1 +1,1 @@
-# casquad-admin
+# a-slot-admin

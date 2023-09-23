@@ -1,0 +1,2 @@
+[] Add mixin currentDate for components
+[] Add mixin mounted for components
