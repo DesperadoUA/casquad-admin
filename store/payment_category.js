@@ -1,6 +1,6 @@
 import DAL_Builder from '~/DAL/builder'
-const POST_TYPE = 'betting/category'
-const DIRECTION = 'betting/category'
+const POST_TYPE = 'payment/category'
+const DIRECTION = 'payment/category'
 export const state = () => ({
     [POST_TYPE]: {
         currentPage: {},
