@@ -1,6 +1,6 @@
 import DAL_Builder from '~/DAL/builder'
-const POST_TYPE = 'poker/category'
-const DIRECTION = 'poker/category'
+const POST_TYPE = 'language'
+const DIRECTION = 'languages'
 export const state = () => ({
     [POST_TYPE]: {
         currentPage: {},
