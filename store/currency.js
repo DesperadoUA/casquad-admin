@@ -1,6 +1,6 @@
 import DAL_Builder from '~/DAL/builder'
-const POST_TYPE = 'share'
-const DIRECTION = 'shares'
+const POST_TYPE = 'currency'
+const DIRECTION = 'currencies'
 export const state = () => ({
     [POST_TYPE]: {
         currentPage: {},

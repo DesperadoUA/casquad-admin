@@ -1,4 +1,4 @@
-[] Currency
+[x] Currency
 [x] Language
 [x] Payments
 [] Создать миксины для списка постов
