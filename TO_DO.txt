@@ -1,3 +1,8 @@
+[x] Casino
+[x] Bonus
+[x] News
+[x] Vendors
+[x] Games
 [x] Currency
 [x] Language
 [x] Payments
