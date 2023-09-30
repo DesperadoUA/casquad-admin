@@ -3,13 +3,12 @@
 		<v-row>
 			<v-col class="mt-0">
 				<MM_Relative_Posts :value="data.category" :action="action" title="Relative category" action_key="category" />
-				<!--
-            <MM_Relative_Posts 
-                    :value = 'data.game_vendor'
-                    :action = 'action' 
-                    :title = '"Relative vendor"' 
-                    :action_key = '"game_vendor"'
-                    /> -->
+				<MM_Relative_Posts
+					:value="data.game_vendor"
+					:action="action"
+					title="Relative vendor"
+					action_key="game_vendor"
+				/>
 			</v-col>
 		</v-row>
 	</v-container>
