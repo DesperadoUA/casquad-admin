@@ -1,11 +1,11 @@
-[] Casino
+[x] Casino
 [] Bonus
-[] News
-[] Vendors
-[] Games
-[] Currency
-[] Language
-[] Payments
+[x] News
+[x] Vendors
+[x] Games
+[x] Currency
+[x] Language
+[x] Payments
 
 [] Создать миксины для списка постов
 [] Создать конфиги для общих типов постов
