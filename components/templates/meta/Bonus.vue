@@ -5,24 +5,17 @@
 				<MM_Input :value="data.bonus" :action="action" title="Bonus" action_key="bonus" />
 				<MM_Input :value="data.min_deposit" :action="action" title="Min deposit" action_key="min_deposit" />
 				<MM_Input :value="data.wagering" :action="action" title="Wagering" action_key="wagering" />
-				<MM_Rating :value="data.rating" :action="action" :title="'Rating'" :action_key="'rating'" />
+				<MM_Rating :value="data.rating" :action="action" title="Rating" :action_key="rating" />
 			</v-col>
 		</v-row>
 	</v-container>
 </template>
 
 <script>
-import MM_Input from '~/components/lib/MM_Input'
-import MM_Rating from '~/components/lib/MM_Rating'
+import global from '~/mixins/global'
 export default {
 	name: 'bonusMeta',
 	props: ['data', 'action'],
-	components: {
-		MM_Input,
-		MM_Rating
-	},
-	data() {
-		return {}
-	}
+	mixins: [global]
 }
 </script>

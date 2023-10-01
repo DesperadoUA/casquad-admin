@@ -9,17 +9,10 @@
 </template>
 
 <script>
-import MM_Input from '~/components/lib/MM_Input'
-import MM_Checkbox from '~/components/lib/MM_Checkbox'
-import MM_Rating from '~/components/lib/MM_Rating'
-import MM_Multiple_Input_Text from '~/components/lib/MM_Multiple_Input_Text'
-import MM_Multiple_Input from '~/components/lib/MM_Multiple_Input'
+import global from '~/mixins/global'
 export default {
 	name: 'languageMeta',
 	props: ['data', 'action'],
-	components: { MM_Input, MM_Checkbox, MM_Multiple_Input, MM_Multiple_Input_Text, MM_Rating },
-	data() {
-		return {}
-	}
+	mixins: [global]
 }
 </script>

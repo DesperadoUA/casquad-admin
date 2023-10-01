@@ -32,20 +32,12 @@
 </template>
 
 <script>
-import MM_Rating from '~/components/lib/MM_Rating'
-import MM_Multiple_Input from '~/components/lib/MM_Multiple_Input'
-import MM_Review from '~/components/lib/MM_Review'
-import MM_Color_Picker from '~/components/lib/MM_Color_Picker.vue'
 import config from '~/config'
+import global from '~/mixins/global'
 export default {
 	name: 'casinoMeta',
 	props: ['data', 'action'],
-	components: {
-		MM_Rating,
-		MM_Multiple_Input,
-		MM_Review,
-		MM_Color_Picker
-	},
+	mixins: [global],
 	data() {
 		return {
 			labels: config.LABELS

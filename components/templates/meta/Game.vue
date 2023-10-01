@@ -20,17 +20,10 @@
 </template>
 
 <script>
-import MM_Input from '~/components/lib/MM_Input'
-import MM_Multiple_Two_Input_Image from '~/components/lib/MM_Multiple_Two_Input_Image'
+import global from '~/mixins/global'
 export default {
 	name: 'slotMeta',
 	props: ['data', 'action'],
-	components: {
-		MM_Input,
-		MM_Multiple_Two_Input_Image
-	},
-	data() {
-		return {}
-	}
+	mixins: [global]
 }
 </script>

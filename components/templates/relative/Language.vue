@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import MM_Relative_Posts from '~/components/lib/MM_Relative_Posts'
+import global from '~/mixins/global'
 export default {
 	name: 'languageCategory',
 	props: ['data', 'action'],
-	components: { MM_Relative_Posts },
+	mixins: [global],
 	data() {
 		return {}
 	}
