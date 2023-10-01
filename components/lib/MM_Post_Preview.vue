@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import config from '~/config.js'
+import config from '~/config'
 export default {
 	name: 'MM_Post_Preview',
 	props: {

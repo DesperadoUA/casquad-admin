@@ -2,7 +2,7 @@
 	<div>
 		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
 		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
-		<postRelative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postRelative>
+		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="LANGUAGE" />
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-5 mb-10">
@@ -25,13 +25,13 @@
 <script>
 import commonEdit from '~/components/templates/commonEdit'
 import postMeta from '~/components/templates/meta/Language'
-import postRelative from '~/components/templates/relative/Language'
+import relative from '~/components/templates/relative'
 import snackBar from '~/components/templates/snackbar'
 import postPreview from '~/components/lib/MM_Post_Preview'
 export default {
 	name: 'singleLanguagePage',
 	layout: 'admin',
-	components: { commonEdit, postMeta, snackBar, postRelative, postPreview },
+	components: { commonEdit, postMeta, snackBar, relative, postPreview },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {

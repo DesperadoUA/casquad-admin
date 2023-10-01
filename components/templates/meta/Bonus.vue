@@ -5,7 +5,7 @@
 				<MM_Input :value="data.bonus" :action="action" title="Bonus" action_key="bonus" />
 				<MM_Input :value="data.min_deposit" :action="action" title="Min deposit" action_key="min_deposit" />
 				<MM_Input :value="data.wagering" :action="action" title="Wagering" action_key="wagering" />
-				<MM_Rating :value="data.rating" :action="action" title="Rating" :action_key="rating" />
+				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
 			</v-col>
 		</v-row>
 	</v-container>
