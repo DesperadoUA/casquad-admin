@@ -7,6 +7,7 @@
 				<MM_Input :value="data.min_bid" :action="action" title="Min bid" action_key="min_bid" />
 				<MM_Input :value="data.scheme" :action="action" title="Scheme" action_key="scheme" />
 				<MM_Input :value="data.lines" :action="action" title="Lines" action_key="lines" />
+				<MM_Checkbox :value="data.game_week" :action="action" title="Game Week" action_key="game_week" />
 				<MM_Multiple_Two_Input_Image :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.screenshots"

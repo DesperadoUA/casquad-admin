@@ -66,6 +66,10 @@ export default {
                 action_key: "game_vendor",
                 title: "Relative vendor",
             },
+            {
+                action_key: "game_casino",
+                title: "Relative casino",
+            },
         ]
     },
     'CURRENCY': {

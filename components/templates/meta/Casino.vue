@@ -2,6 +2,10 @@
 	<v-container>
 		<v-row>
 			<v-col class="mt-0">
+				<MM_Image :value="data.icon" title="Icon" :action="action" action_key="icon" />
+				<MM_Input :value="data.wager" :action="action" title="wager" action_key="wager" />
+				<MM_Input :value="data.min_dep" :action="action" title="min_dep" action_key="min_dep" />
+				<MM_Input :value="data.bonus_value" :action="action" title="bonus_value" action_key="bonus_value" />
 				<MM_Multiple_Input :value="data.ref" :action="action" title="Referral link" action_key="ref" />
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
 				<MM_Color_Picker :value="data.color" :action="action" title="Color" action_key="color" />
