@@ -1,57 +1,60 @@
 <template>
-  <v-app>
-    <div class="admin_layout">
-      <AdminMenu />
-      <nuxt />
-    </div>
-  </v-app>
+	<v-app>
+		<div class="admin_layout">
+			<AdminMenu />
+			<nuxt />
+		</div>
+	</v-app>
 </template>
 
 <script>
-import AdminMenu from "~/components/templates/adminMenu";
+import AdminMenu from '~/components/templates/adminMenu'
 export default {
-  name: "admin",
-  components: { AdminMenu },
-  middleware: ["checkAuth"]
-};
+	name: 'admin',
+	components: { AdminMenu },
+	middleware: ['checkAuth']
+}
 </script>
 
 <style>
 :root {
-  --orange: #ff3d00;
-  --white: #ffffff;
+	--orange: #ff3d00;
+	--white: #ffffff;
 }
 
 body {
-  background: #333;
+	background: #333;
 }
 body .v-application .primary {
-  background: var(--orange) !important;
+	background: var(--orange) !important;
 }
 .color-orange {
-  color: #ff3d00;
+	color: #ff3d00;
 }
 .page_title {
-  margin-top: 50px;
-  text-align: center;
-  font-family: "Podkova";
+	margin-top: 50px;
+	text-align: center;
+	font-family: 'Podkova';
 }
 .font-podkova-light {
-  font-family: "Podkova";
-  font-weight: 400;
+	font-family: 'Podkova';
+	font-weight: 400;
 }
 .font-podkova-bold {
-  font-family: "Podkova";
-  font-weight: 800;
+	font-family: 'Podkova';
+	font-weight: 800;
 }
 .font-podkova-midle {
-  font-family: "Podkova";
-  font-weight: 500;
+	font-family: 'Podkova';
+	font-weight: 500;
 }
 .pointer {
-  cursor: pointer;
+	cursor: pointer;
 }
 .lang {
-  width: 20px;
+	width: 20px;
+}
+.hide {
+	display: none;
 }
 </style>

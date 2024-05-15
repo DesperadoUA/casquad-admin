@@ -12,15 +12,8 @@
 						<v-tabs v-model="tab" background-color="dark" dark icons-and-text color="white">
 							<v-tabs-slider></v-tabs-slider>
 
-							<v-tab href="#tab-1">
-								Ru
-								<img
-									lazy-src="https://admin.onlinecasino.ua/img/ru.jpg"
-									class="lang"
-									src="https://admin.onlinecasino.ua/img/ru.jpg"
-								/>
-							</v-tab>
-							<v-tab href="#tab-2">
+							<v-tab href="#tab-1"> En <img lazy-src="/img/en.jpg" class="lang" src="/img/en.jpg" /> </v-tab>
+							<v-tab href="#tab-2" class="hide">
 								Ua
 								<img
 									lazy-src="https://admin.onlinecasino.ua/img/ua.jpg"

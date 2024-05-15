@@ -11,10 +11,10 @@
 				<MM_Color_Picker :value="data.color" :action="action" title="Color" action_key="color" />
 				<MM_Multiple_Input :value="data.advantages" :action="action" title="Advantages" action_key="advantages" />
 				<MM_Rich_Text
-					:value="data.content_reviews"
+					:value="data.content_analysis"
 					:action="action"
-					title="Content reviews"
-					action_key="content_reviews"
+					title="Content analysis"
+					action_key="content_analysis"
 				/>
 				<MM_Rich_Text
 					:value="data.content_bonuses"
@@ -23,10 +23,10 @@
 					action_key="content_bonuses"
 				/>
 				<MM_Rich_Text
-					:value="data.content_payments"
+					:value="data.content_reviews"
 					:action="action"
-					title="Content payments"
-					action_key="content_payments"
+					title="Content reviews"
+					action_key="content_reviews"
 				/>
 				<MM_Rich_Text :value="data.content_games" :action="action" title="Content games" action_key="content_games" />
 				<MM_Options :value="data.label" :action="action" :all_value="labels" title="Labels" action_key="label" />

@@ -8,13 +8,15 @@
 				<MM_Input :value="data.scheme" :action="action" title="Scheme" action_key="scheme" />
 				<MM_Input :value="data.lines" :action="action" title="Lines" action_key="lines" />
 				<MM_Checkbox :value="data.game_week" :action="action" title="Game Week" action_key="game_week" />
-				<MM_Multiple_Two_Input_Image :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
+				<MM_Multiple_Input :value="data.ref" :action="action" title="Referral link" action_key="ref" />
+				<MM_Characters_Game :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.screenshots"
 					:action="action"
 					title="Screenshots"
 					action_key="screenshots"
 				/>
+				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 			</v-col>
 		</v-row>
 	</v-container>
