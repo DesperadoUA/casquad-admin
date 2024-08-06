@@ -55,6 +55,6 @@ body .v-application .primary {
 	width: 20px;
 }
 .hide {
-	display: none;
+	display: none !important;
 }
 </style>
