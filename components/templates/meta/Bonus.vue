@@ -2,6 +2,7 @@
 	<v-container>
 		<v-row>
 			<v-col class="mt-0">
+				<MM_Image :value="data.banner" title="Banner" :action="action" action_key="banner" />
 				<MM_Input :value="data.bonus" :action="action" title="Bonus" action_key="bonus" />
 				<MM_Input :value="data.min_deposit" :action="action" title="Min deposit" action_key="min_deposit" />
 				<MM_Input :value="data.wagering" :action="action" title="Wagering" action_key="wagering" />
