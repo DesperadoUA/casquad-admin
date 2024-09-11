@@ -50,6 +50,7 @@
 						action_key="update_at"
 					/>
 					<MM_Image v-if="data" :value="data.thumbnail" title="Thumbnail" :action="action" action_key="thumbnail" />
+					<MM_Image v-if="data" :value="data.social_img" title="Social Img" :action="action" action_key="social_img" />
 					<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 					<MM_Media_Library />
 				</v-col>
