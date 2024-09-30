@@ -38,6 +38,10 @@ export default {
 			{
 				action_key: 'casino_language',
 				title: 'Relative language'
+			},
+			{
+				action_key: 'casino_casino',
+				title: 'Relative casino'
 			}
 		]
 	},
@@ -47,6 +51,10 @@ export default {
 			{
 				action_key: 'category',
 				title: 'Relative category'
+			},
+			{
+				action_key: 'news_casino',
+				title: 'Relative casino'
 			}
 		]
 	},

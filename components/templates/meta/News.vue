@@ -2,6 +2,7 @@
 	<v-container>
 		<v-row>
 			<v-col class="mt-0">
+				<MM_Image :value="data.icon" title="Icon" :action="action" action_key="icon" />
 				<MM_Input :value="data.author" :action="action" title="author" action_key="author" />
 			</v-col>
 		</v-row>
