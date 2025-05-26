@@ -5,6 +5,8 @@
 				<MM_Image :value="data.icon" title="Icon" :action="action" action_key="icon" />
 				<MM_Image :value="data.banner" title="Banner" :action="action" action_key="banner" />
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
+				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
+				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
 			</v-col>
 		</v-row>
 	</v-container>

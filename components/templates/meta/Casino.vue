@@ -30,6 +30,8 @@
 				/>
 				<MM_Rich_Text :value="data.content_games" :action="action" title="Content games" action_key="content_games" />
 				<MM_Options :value="data.label" :action="action" :all_value="labels" title="Labels" action_key="label" />
+				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
+				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
 			</v-col>
 		</v-row>
 	</v-container>
