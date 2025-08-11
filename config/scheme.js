@@ -111,6 +111,15 @@ export default {
 			}
 		]
 	},
+	AUTHOR: {
+		meta: [],
+		relative: [
+			{
+				action_key: 'category',
+				title: 'Relative category'
+			}
+		]
+	},
 	DEFAULT: {
 		meta: [],
 		relative: [

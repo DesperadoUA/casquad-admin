@@ -49,6 +49,7 @@ export default {
 				{ title: 'Currency', thumbnail: 'https://admin.onlinecasino.ua/img/slots.png', link: '/admin/currency' },
 				{ title: 'Bonuses', thumbnail: 'https://admin.onlinecasino.ua/img/bonuses.png', link: '/admin/bonus' },
 				{ title: 'Vendors', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/vendor' },
+				{ title: 'Authors', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/author' },
 				{ title: 'Language', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/language' },
 				{ title: 'Settings', thumbnail: 'https://admin.onlinecasino.ua/img/settings.png', link: '/admin/settings' },
 				{ title: 'Options', thumbnail: 'https://admin.onlinecasino.ua/img/options.png', link: '/admin/options' }

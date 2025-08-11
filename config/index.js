@@ -1,4 +1,4 @@
 export default {
-	PROD_URL: 'https://casquad.lenddev.com.ua/',
+	PROD_URL: 'https://casquads.com/',
 	LABELS: ['popular', 'new', 'trusted', 'best']
 }
