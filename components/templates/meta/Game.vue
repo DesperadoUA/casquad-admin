@@ -9,7 +9,7 @@
 				<MM_Input :value="data.scheme" :action="action" title="Scheme" action_key="scheme" />
 				<MM_Input :value="data.lines" :action="action" title="Lines" action_key="lines" />
 				<MM_Checkbox :value="data.game_week" :action="action" title="Game Week" action_key="game_week" />
-				<MM_Multiple_Input :value="data.ref" :action="action" title="Referral link" action_key="ref" />
+        <MM_Multiple_Input_Options :value="data.ref" :action="action" title="Referral link" action_key="ref" :items="geo" />
 				<MM_Characters_Game :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.screenshots"
@@ -28,9 +28,15 @@
 
 <script>
 import global from '~/mixins/global'
+import config from '~/config'
 export default {
 	name: 'slotMeta',
 	props: ['data', 'action'],
+  data() {
+    return {
+      geo: config.GEO
+    }
+  },
 	mixins: [global]
 }
 </script>

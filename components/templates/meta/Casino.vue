@@ -6,7 +6,7 @@
 				<MM_Input :value="data.wager" :action="action" title="wager" action_key="wager" />
 				<MM_Input :value="data.min_dep" :action="action" title="min_dep" action_key="min_dep" />
 				<MM_Input :value="data.bonus_value" :action="action" title="bonus_value" action_key="bonus_value" />
-				<MM_Multiple_Input :value="data.ref" :action="action" title="Referral link" action_key="ref" />
+        <MM_Multiple_Input_Options :value="data.ref" :action="action" title="Referral link" action_key="ref" :items="geo" />
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
 				<MM_Color_Picker :value="data.color" :action="action" title="Color" action_key="color" />
 				<MM_Multiple_Input :value="data.advantages" :action="action" title="Advantages" action_key="advantages" />
@@ -47,7 +47,8 @@ export default {
 	mixins: [global],
 	data() {
 		return {
-			labels: config.LABELS
+			labels: config.LABELS,
+      geo: config.GEO
 		}
 	}
 }

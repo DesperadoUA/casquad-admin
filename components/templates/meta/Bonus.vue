@@ -7,6 +7,7 @@
 				<MM_Input :value="data.min_deposit" :action="action" title="Min deposit" action_key="min_deposit" />
 				<MM_Input :value="data.wagering" :action="action" title="Wagering" action_key="wagering" />
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
+        <MM_Multiple_Input_Options :value="data.ref" :action="action" title="Referral link" action_key="ref" :items="geo" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -14,9 +15,15 @@
 
 <script>
 import global from '~/mixins/global'
+import config from '~/config'
 export default {
 	name: 'bonusMeta',
 	props: ['data', 'action'],
+  data() {
+    return {
+      geo: config.GEO
+    }
+  },
 	mixins: [global]
 }
 </script>
