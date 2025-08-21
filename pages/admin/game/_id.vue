@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
-		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
+		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
 		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="GAME" />
 		<v-container>
 			<v-row>
@@ -28,10 +28,11 @@ import postMeta from '~/components/templates/meta/Game'
 import relative from '~/components/templates/relative'
 import snackBar from '~/components/templates/snackbar'
 import postPreview from '~/components/lib/MM_Post_Preview'
+import geoEdit from '~/components/templates/geoEdit'
 export default {
 	name: 'singleGamePage',
 	layout: 'admin',
-	components: { commonEdit, postMeta, snackBar, relative, postPreview },
+	components: { commonEdit, postMeta, snackBar, relative, postPreview, geoEdit },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {

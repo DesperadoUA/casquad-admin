@@ -1,7 +1,8 @@
 <template>
 	<div>
-		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
-		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
+		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+    <geoEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
 		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="CASINO" />
 		<v-container>
 			<v-row>
@@ -27,10 +28,11 @@ import commonEdit from '~/components/templates/commonEdit'
 import postMeta from '~/components/templates/meta/Casino'
 import snackBar from '~/components/templates/snackbar'
 import postPreview from '~/components/lib/MM_Post_Preview'
+import geoEdit from '~/components/templates/geoEdit'
 export default {
 	name: 'singleCasinoPage',
 	layout: 'admin',
-	components: { commonEdit, postMeta, snackBar, postPreview },
+	components: { commonEdit, postMeta, snackBar, postPreview, geoEdit },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {

@@ -1,7 +1,8 @@
 <template>
 	<div>
-		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
-		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
+		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+    <geoEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
 		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="BONUS" />
 		<v-container>
 			<v-row>
@@ -28,10 +29,11 @@ import postMeta from '~/components/templates/meta/Bonus'
 import snackBar from '~/components/templates/snackbar'
 import postPreview from '~/components/lib/MM_Post_Preview'
 import relative from '~/components/templates/relative'
+import geoEdit from '~/components/templates/geoEdit'
 export default {
 	name: 'singleBonusPage',
 	layout: 'admin',
-	components: { commonEdit, postMeta, snackBar, postPreview, relative },
+	components: { commonEdit, postMeta, snackBar, postPreview, relative, geoEdit },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {
