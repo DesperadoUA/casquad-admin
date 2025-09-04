@@ -6,7 +6,13 @@
 				<MM_Input :value="data.wager" :action="action" title="wager" action_key="wager" />
 				<MM_Input :value="data.min_dep" :action="action" title="min_dep" action_key="min_dep" />
 				<MM_Input :value="data.bonus_value" :action="action" title="bonus_value" action_key="bonus_value" />
-        <MM_Multiple_Input_Options :value="data.ref" :action="action" title="Referral link" action_key="ref" :items="geo" />
+				<MM_Multiple_Input_Options
+					:value="data.ref"
+					:action="action"
+					title="Referral link"
+					action_key="ref"
+					:items="geo"
+				/>
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
 				<MM_Color_Picker :value="data.color" :action="action" title="Color" action_key="color" />
 				<MM_Multiple_Input :value="data.advantages" :action="action" title="Advantages" action_key="advantages" />
@@ -32,7 +38,6 @@
 				<MM_Options :value="data.label" :action="action" :all_value="labels" title="Labels" action_key="label" />
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
-        <MM_Review :value="data.reviews" :action="action" title="Reviews" action_key="reviews" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -48,7 +53,7 @@ export default {
 	data() {
 		return {
 			labels: config.LABELS,
-      geo: config.GEO
+			geo: config.GEO
 		}
 	}
 }
