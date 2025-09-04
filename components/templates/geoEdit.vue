@@ -20,17 +20,6 @@
                       </v-sheet>
                     </v-col>
                     <v-col cols="1">
-                      <img src="/img/BD.webp" width="32" height="28" />
-                      <v-sheet>
-                        <v-switch
-                          color="deep-orange darken-2"
-                          v-model="geo_BD"
-                          inset
-                          @change="change('geo_BD')"
-                        ></v-switch>
-                      </v-sheet>
-                    </v-col>
-                    <v-col cols="1">
                       <img src="/img/AU.webp" width="32" height="28" />
                       <v-sheet>
                         <v-switch
@@ -38,6 +27,51 @@
                           v-model="geo_AU"
                           inset
                           @change="change('geo_AU')"
+                        ></v-switch>
+                      </v-sheet>
+                    </v-col>
+                    <v-col cols="1">
+                      <img src="/img/CA.webp" width="32" height="28" />
+                      <v-sheet>
+                        <v-switch
+                          color="deep-orange darken-2"
+                          v-model="geo_CA"
+                          inset
+                          @change="change('geo_CA')"
+                        ></v-switch>
+                      </v-sheet>
+                    </v-col>
+                    <v-col cols="1">
+                      <img src="/img/NL.webp" width="32" height="28" />
+                      <v-sheet>
+                        <v-switch
+                          color="deep-orange darken-2"
+                          v-model="geo_NL"
+                          inset
+                          @change="change('geo_NL')"
+                        ></v-switch>
+                      </v-sheet>
+                    </v-col>
+                    <v-col cols="1">
+                      <img src="/img/DE.webp" width="32" height="28" />
+                      <v-sheet>
+                        <v-switch
+                          color="deep-orange darken-2"
+                          v-model="geo_DE"
+                          inset
+                          @change="change('geo_DE')"
+                        ></v-switch>
+                      </v-sheet>
+                    </v-col>
+                    <!--
+                    <v-col cols="1">
+                      <img src="/img/BD.webp" width="32" height="28" />
+                      <v-sheet>
+                        <v-switch
+                          color="deep-orange darken-2"
+                          v-model="geo_BD"
+                          inset
+                          @change="change('geo_BD')"
                         ></v-switch>
                       </v-sheet>
                     </v-col>
@@ -75,39 +109,6 @@
                       </v-sheet>
                     </v-col>
                     <v-col cols="1">
-                      <img src="/img/CA.webp" width="32" height="28" />
-                      <v-sheet>
-                        <v-switch
-                          color="deep-orange darken-2"
-                          v-model="geo_CA"
-                          inset
-                          @change="change('geo_CA')"
-                        ></v-switch>
-                      </v-sheet>
-                    </v-col>
-                    <v-col cols="1">
-                      <img src="/img/NL.webp" width="32" height="28" />
-                      <v-sheet>
-                        <v-switch
-                          color="deep-orange darken-2"
-                          v-model="geo_NL"
-                          inset
-                          @change="change('geo_NL')"
-                        ></v-switch>
-                      </v-sheet>
-                    </v-col>
-                    <v-col cols="1">
-                      <img src="/img/DE.webp" width="32" height="28" />
-                      <v-sheet>
-                        <v-switch
-                          color="deep-orange darken-2"
-                          v-model="geo_DE"
-                          inset
-                          @change="change('geo_DE')"
-                        ></v-switch>
-                      </v-sheet>
-                    </v-col>
-                    <v-col cols="1">
                       <img src="/img/ZA.webp" width="32" height="28" />
                       <v-sheet>
                         <v-switch
@@ -140,6 +141,7 @@
                         ></v-switch>
                       </v-sheet>
                     </v-col>
+                    -->
                 </v-row>
               </v-expansion-panel-content>
             </v-expansion-panel>
