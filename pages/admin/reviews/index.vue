@@ -1,62 +1,62 @@
 <template>
-  <div>
-    <v-container class="container--fluid">
-      <v-row>
-        <v-col class="offset-1 col-10 mt-10">
-          <h1 class="page_title font-podkova-bold">Reviews</h1>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col class="offset-1 col-10 mt-2 mb-5">
-          <v-card>
-            <v-tabs v-model="tab" background-color="dark" dark icons-and-text color="white">
-              <v-tabs-slider></v-tabs-slider>
+	<div>
+		<v-container class="container--fluid">
+			<v-row>
+				<v-col class="offset-1 col-10 mt-10">
+					<h1 class="page_title font-podkova-bold">Reviews</h1>
+				</v-col>
+			</v-row>
+			<v-row>
+				<v-col class="offset-1 col-10 mt-2 mb-5">
+					<v-card>
+						<v-tabs v-model="tab" background-color="dark" dark icons-and-text color="white">
+							<v-tabs-slider></v-tabs-slider>
 
-              <v-tab href="#tab-1"> En <img lazy-src="/img/en.jpg" class="lang" src="/img/en.jpg" /> </v-tab>
-              <v-tab href="#tab-2" class="hide">
-                Ua
-                <img
-                  lazy-src="https://admin.onlinecasino.ua/img/ua.jpg"
-                  class="lang"
-                  src="https://admin.onlinecasino.ua/img/ua.jpg"
-                />
-              </v-tab>
-            </v-tabs>
-            <v-tabs-items v-model="tab">
-              <v-tab-item v-for="i in 2" :key="i" :value="'tab-' + i">
-                <v-card>
-                  <v-card-text class="black">
-                    <div v-if="tab == 'tab-2'">
-                      <ReviewLoop :data="postsUa" />
-                      <TotalPosts :data="data.ua.total" />
-                      <MM_Paginations
-                        :length="Math.ceil(data.ua.total / numberPostOnPage)"
-                        :lang="2"
-                        :action="POST_TYPE + '/setPaginationPage'"
-                        :numberOnPage="numberPostOnPage"
-                        :getterPage="POST_TYPE + '/getPage'"
-                      />
-                    </div>
-                    <div v-else>
-                      <ReviewLoop :data="postsRu" />
-                      <TotalPosts :data="data.ru.total" />
-                      <MM_Paginations
-                        :length="Math.ceil(data.ru.total / numberPostOnPage)"
-                        :lang="1"
-                        :action="POST_TYPE + '/setPaginationPage'"
-                        :numberOnPage="numberPostOnPage"
-                        :getterPage="POST_TYPE + '/getPage'"
-                      />
-                    </div>
-                  </v-card-text>
-                </v-card>
-              </v-tab-item>
-            </v-tabs-items>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+							<v-tab href="#tab-1"> En <img lazy-src="/img/en.jpg" class="lang" src="/img/en.jpg" /> </v-tab>
+							<v-tab href="#tab-2" class="hide">
+								Ua
+								<img
+									lazy-src="https://admin.onlinecasino.ua/img/ua.jpg"
+									class="lang"
+									src="https://admin.onlinecasino.ua/img/ua.jpg"
+								/>
+							</v-tab>
+						</v-tabs>
+						<v-tabs-items v-model="tab">
+							<v-tab-item v-for="i in 2" :key="i" :value="'tab-' + i">
+								<v-card>
+									<v-card-text class="black">
+										<div v-if="tab == 'tab-2'">
+											<ReviewLoop :data="postsUa" />
+											<TotalPosts :data="data.ua.total" />
+											<MM_Paginations
+												:length="Math.ceil(data.ua.total / numberPostOnPage)"
+												:lang="2"
+												:action="POST_TYPE + '/setPaginationPage'"
+												:numberOnPage="numberPostOnPage"
+												:getterPage="POST_TYPE + '/getPage'"
+											/>
+										</div>
+										<div v-else>
+											<ReviewLoop :data="postsRu" />
+											<TotalPosts :data="data.ru.total" />
+											<MM_Paginations
+												:length="Math.ceil(data.ru.total / numberPostOnPage)"
+												:lang="1"
+												:action="POST_TYPE + '/setPaginationPage'"
+												:numberOnPage="numberPostOnPage"
+												:getterPage="POST_TYPE + '/getPage'"
+											/>
+										</div>
+									</v-card-text>
+								</v-card>
+							</v-tab-item>
+						</v-tabs-items>
+					</v-card>
+				</v-col>
+			</v-row>
+		</v-container>
+	</div>
 </template>
 
 <script>
@@ -64,72 +64,72 @@ import TotalPosts from '~/components/templates/totalPosts'
 import MM_Paginations from '~/components/lib/MM_Paginations'
 import ReviewLoop from '@/components/templates/reviewLoop.vue'
 export default {
-  name: 'reviews',
-  layout: 'admin',
-  component: { ReviewLoop, TotalPosts, MM_Paginations },
-  async mounted() {
-    this.data.ru.posts = []
-    this.data.ua.posts = []
-    const user = this.$store.getters['user/getUser']
-    const page = this.$store.getters[this.POST_TYPE + '/getPage']
-    const dataRu = {
-      session: user.session,
-      id: user.id,
-      lang: 1,
-      limit: this.numberPostOnPage,
-      offset: (page.ru - 1) * this.numberPostOnPage
-    }
-    await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataRu)
-    const dataUa = {
-      session: user.session,
-      id: user.id,
-      lang: 2,
-      limit: this.numberPostOnPage,
-      offset: (page.ua - 1) * this.numberPostOnPage
-    }
-    await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataUa)
-    const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-    this.data.ru.posts = list.ru
-    this.data.ua.posts = list.ua
+	name: 'reviews',
+	layout: 'admin',
+	component: { ReviewLoop, TotalPosts, MM_Paginations },
+	async mounted() {
+		this.data.ru.posts = []
+		this.data.ua.posts = []
+		const user = this.$store.getters['user/getUser']
+		const page = this.$store.getters[this.POST_TYPE + '/getPage']
+		const dataRu = {
+			session: user.session,
+			id: user.id,
+			lang: 1,
+			limit: this.numberPostOnPage,
+			offset: (page.ru - 1) * this.numberPostOnPage
+		}
+		await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataRu)
+		const dataUa = {
+			session: user.session,
+			id: user.id,
+			lang: 2,
+			limit: this.numberPostOnPage,
+			offset: (page.ua - 1) * this.numberPostOnPage
+		}
+		await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataUa)
+		const list = this.$store.getters[this.POST_TYPE + '/getPosts']
+		this.data.ru.posts = list.ru
+		this.data.ua.posts = list.ua
 
-    const total = this.$store.getters[this.POST_TYPE + '/getTotal']
-    this.data.ru.total = total.ru
-    this.data.ua.total = total.ua
-    console.log(this.data.ru.posts, this.data.ua.posts)
-  },
-  data() {
-    return {
-      POST_TYPE: 'review',
-      POST_DB: 'reviews',
-      data: {
-        ru: {
-          post_slug: 'review',
-          lang: 'ru',
-          posts: [],
-          total: 0
-        },
-        ua: {
-          post_slug: 'review',
-          lang: 'ua',
-          posts: [],
-          total: 0
-        }
-      },
-      tab: null,
-      numberPostOnPage: 8
-    }
-  },
-  computed: {
-    postsRu() {
-      const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-      this.data.ru.posts = list.ru
-      return this.data.ru.posts
-    },
-    postsUa() {
-      const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-      this.data.ua.posts = list.ua
-      return this.data.ua.posts
-    }
-  }
+		const total = this.$store.getters[this.POST_TYPE + '/getTotal']
+		this.data.ru.total = total.ru
+		this.data.ua.total = total.ua
+		console.log(this.data.ru.posts, this.data.ua.posts)
+	},
+	data() {
+		return {
+			POST_TYPE: 'review',
+			POST_DB: 'reviews',
+			data: {
+				ru: {
+					post_slug: 'review',
+					lang: 'ru',
+					posts: [],
+					total: 0
+				},
+				ua: {
+					post_slug: 'review',
+					lang: 'ua',
+					posts: [],
+					total: 0
+				}
+			},
+			tab: null,
+			numberPostOnPage: 8
+		}
+	},
+	computed: {
+		postsRu() {
+			const list = this.$store.getters[this.POST_TYPE + '/getPosts']
+			this.data.ru.posts = list.ru
+			return this.data.ru.posts
+		},
+		postsUa() {
+			const list = this.$store.getters[this.POST_TYPE + '/getPosts']
+			this.data.ua.posts = list.ua
+			return this.data.ua.posts
+		}
+	}
 }
 </script>

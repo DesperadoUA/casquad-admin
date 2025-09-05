@@ -7,7 +7,7 @@
 				<MM_Rating :value="data.rating" :action="action" title="Rating" action_key="rating" />
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
-        <MM_Review :value="data.reviews" :action="action" title="Reviews" action_key="reviews" />
+				<MM_Review :value="data.reviews" :action="action" title="Reviews" action_key="reviews" />
 			</v-col>
 		</v-row>
 	</v-container>

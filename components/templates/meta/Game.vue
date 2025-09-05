@@ -9,7 +9,13 @@
 				<MM_Input :value="data.scheme" :action="action" title="Scheme" action_key="scheme" />
 				<MM_Input :value="data.lines" :action="action" title="Lines" action_key="lines" />
 				<MM_Checkbox :value="data.game_week" :action="action" title="Game Week" action_key="game_week" />
-        <MM_Multiple_Input_Options :value="data.ref" :action="action" title="Referral link" action_key="ref" :items="geo" />
+				<MM_Multiple_Input_Options
+					:value="data.ref"
+					:action="action"
+					title="Referral link"
+					action_key="ref"
+					:items="geo"
+				/>
 				<MM_Characters_Game :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.screenshots"
@@ -20,7 +26,7 @@
 				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
-        <MM_Review :value="data.reviews" :action="action" title="Reviews" action_key="reviews" />
+				<MM_Review :value="data.reviews" :action="action" title="Reviews" action_key="reviews" />
 			</v-col>
 		</v-row>
 	</v-container>
@@ -32,11 +38,11 @@ import config from '~/config'
 export default {
 	name: 'slotMeta',
 	props: ['data', 'action'],
-  data() {
-    return {
-      geo: config.GEO
-    }
-  },
+	data() {
+		return {
+			geo: config.GEO
+		}
+	},
 	mixins: [global]
 }
 </script>

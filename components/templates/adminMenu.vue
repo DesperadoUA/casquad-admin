@@ -7,9 +7,9 @@
 				<v-btn text exact class="font-podkova-bold nav-link" v-for="link in links" :key="link.title" :to="link.url">
 					{{ link.title }}
 				</v-btn>
-        <v-btn text exact class="font-podkova-bold nav-link" to="/admin/reviews" no-prefetch>
-          Reviews
-        </v-btn>
+				<v-btn text exact class="font-podkova-bold nav-link" to="/admin/reviews" no-prefetch>
+					Reviews
+				</v-btn>
 				<v-btn text exact class="font-podkova-bold nav-link" @click="logout" no-prefetch>
 					LOGOUT
 				</v-btn>
@@ -284,16 +284,16 @@
 						</v-list>
 					</v-menu>
 				</v-layout>
-        <v-layout class="justify-space-around mt-3 align-center">
-          <v-btn
-            class="deep-orange darken-2 display_block justify-start"
-            color="deep-orange darken-2 font-podkova-bold"
-            to="/admin/reviews"
-          >
-            <v-icon left color="white">mdi-logout</v-icon>
-            Reviews
-          </v-btn>
-        </v-layout>
+				<v-layout class="justify-space-around mt-3 align-center">
+					<v-btn
+						class="deep-orange darken-2 display_block justify-start"
+						color="deep-orange darken-2 font-podkova-bold"
+						to="/admin/reviews"
+					>
+						<v-icon left color="white">mdi-folder-multiple-outline</v-icon>
+						Reviews
+					</v-btn>
+				</v-layout>
 				<v-layout class="justify-space-around mt-3 align-center">
 					<v-btn
 						class="deep-orange darken-2 display_block justify-start"
