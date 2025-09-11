@@ -2,9 +2,6 @@
 	<v-container>
 		<v-row>
 			<v-col class="mt-0">
-				<MM_Image :value="data.icon" title="Icon" :action="action" action_key="icon" />
-				<MM_Image :value="data.preview_img" title="Preview" :action="action" action_key="preview_img" />
-				<MM_Input :value="data.author" :action="action" title="author" action_key="author" />
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />
 			</v-col>
 		</v-row>
@@ -14,7 +11,7 @@
 <script>
 import global from '~/mixins/global'
 export default {
-	name: 'slotMeta',
+	name: 'articleMeta',
 	props: ['data', 'action'],
 	mixins: [global]
 }

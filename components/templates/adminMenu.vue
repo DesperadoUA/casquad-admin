@@ -283,6 +283,32 @@
 							</v-list-item>
 						</v-list>
 					</v-menu>
+					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
+						<template v-slot:activator="{ on, attrs }">
+							<v-btn
+								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
+								dark
+								v-bind="attrs"
+								v-on="on"
+							>
+								<v-icon left>mdi-folder-multiple-outline</v-icon>
+								Blog
+							</v-btn>
+						</template>
+						<v-list>
+							<v-list-item
+								no-prefetch
+								class="font-podkova-bold"
+								v-for="(item, i) in articlePage"
+								:key="i"
+								:to="item.link"
+							>
+								<v-list-item-title>
+									{{ item.title }}
+								</v-list-item-title>
+							</v-list-item>
+						</v-list>
+					</v-menu>
 				</v-layout>
 				<v-layout class="justify-space-around mt-3 align-center">
 					<v-btn
@@ -328,7 +354,8 @@ export default {
 				{ title: 'BONUSES', url: '/admin/bonus', icon: 'mdi-gamepad-variant' },
 				{ title: 'LANGUAGES', url: '/admin/language', icon: 'mdi-gamepad-variant' },
 				{ title: 'PAYMENTS', url: '/admin/payment', icon: 'mdi-gamepad-variant' },
-				{ title: 'AUTHORS', url: '/admin/author', icon: 'mdi-gamepad-variant' }
+				{ title: 'AUTHORS', url: '/admin/author', icon: 'mdi-gamepad-variant' },
+				{ title: 'BLOG', url: '/admin/article', icon: 'mdi-gamepad-variant' }
 			],
 			casinoPage: [
 				{ title: 'All casino', link: '/admin/casino' },
@@ -383,6 +410,12 @@ export default {
 				{ title: 'Add author', link: '/admin/author/add' },
 				{ title: 'All category author', link: '/admin/author/category' },
 				{ title: 'Add category author', link: '/admin/author/category/add' }
+			],
+			articlePage: [
+				{ title: 'All articles', link: '/admin/article' },
+				{ title: 'Add article', link: '/admin/article/add' },
+				{ title: 'All category article', link: '/admin/article/category' },
+				{ title: 'Add category article', link: '/admin/article/category/add' }
 			]
 		}
 	},
