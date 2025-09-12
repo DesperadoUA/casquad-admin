@@ -14,7 +14,6 @@
 						<v-col class="col-xs-12 col-md-4" v-for="card in cards" :key="card.title">
 							<v-card class="mx-auto" max-width="344">
 								<v-img :src="card.thumbnail" height="200px"></v-img>
-
 								<v-card-title class="font-podkova-bold">
 									{{ card.title }}
 									<v-spacer></v-spacer>
@@ -50,6 +49,7 @@ export default {
 				{ title: 'Bonuses', thumbnail: 'https://admin.onlinecasino.ua/img/bonuses.png', link: '/admin/bonus' },
 				{ title: 'Vendors', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/vendor' },
 				{ title: 'Authors', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/author' },
+				{ title: 'Articles', thumbnail: 'https://admin.onlinecasino.ua/img/blog.png', link: '/admin/article' },
 				{ title: 'Language', thumbnail: 'https://admin.onlinecasino.ua/img/vendors.png', link: '/admin/language' },
 				{ title: 'Settings', thumbnail: 'https://admin.onlinecasino.ua/img/settings.png', link: '/admin/settings' },
 				{ title: 'Options', thumbnail: 'https://admin.onlinecasino.ua/img/options.png', link: '/admin/options' }
@@ -58,5 +58,3 @@ export default {
 	}
 }
 </script>
-
-<style scoped></style>

@@ -10,8 +10,6 @@
 				<v-col class="offset-1 col-10 mt-2 mb-5">
 					<v-card>
 						<v-tabs v-model="tab" background-color="dark" dark icons-and-text color="white">
-							<v-tabs-slider></v-tabs-slider>
-
 							<v-tab href="#tab-1"> En <img lazy-src="/img/en.jpg" class="lang" src="/img/en.jpg" /> </v-tab>
 							<v-tab href="#tab-2" class="hide">
 								Ua
@@ -27,7 +25,7 @@
 								<v-card>
 									<v-card-text class="black">
 										<div v-if="tab == 'tab-2'">
-											<Search :postType="POST_DB" :lang="'2'" />
+											<Search :postType="POST_DB" lang="2" />
 											<CategoryLoop :data="postsUa" />
 											<TotalPosts :data="data.ua.total" />
 											<MM_Paginations
@@ -39,7 +37,7 @@
 											/>
 										</div>
 										<div v-else>
-											<Search :postType="POST_DB" :lang="'1'" />
+											<Search :postType="POST_DB" lang="1" />
 											<CategoryLoop :data="postsRu" />
 											<TotalPosts :data="data.ru.total" />
 											<MM_Paginations
@@ -62,44 +60,11 @@
 </template>
 
 <script>
-import CategoryLoop from '~/components/templates/categoryLoop'
-import TotalPosts from '~/components/templates/totalPosts'
-import MM_Paginations from '~/components/lib/MM_Paginations'
-import Search from '~/components/templates/search.vue'
+import postIndex from '@/mixins/postIndex'
 
 export default {
 	name: 'article',
-	layout: 'admin',
-	component: { CategoryLoop, TotalPosts, MM_Paginations, Search },
-	async mounted() {
-		this.data.ru.posts = []
-		this.data.ua.posts = []
-		const user = this.$store.getters['user/getUser']
-		const page = this.$store.getters[this.POST_TYPE + '/getPage']
-		const dataRu = {
-			session: user.session,
-			id: user.id,
-			lang: 1,
-			limit: this.numberPostOnPage,
-			offset: (page.ru - 1) * this.numberPostOnPage
-		}
-		await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataRu)
-		const dataUa = {
-			session: user.session,
-			id: user.id,
-			lang: 2,
-			limit: this.numberPostOnPage,
-			offset: (page.ua - 1) * this.numberPostOnPage
-		}
-		await this.$store.dispatch(this.POST_TYPE + '/setPosts', dataUa)
-		const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-		this.data.ru.posts = list.ru
-		this.data.ua.posts = list.ua
-
-		const total = this.$store.getters[this.POST_TYPE + '/getTotal']
-		this.data.ru.total = total.ru
-		this.data.ua.total = total.ua
-	},
+	mixins: [postIndex],
 	data() {
 		return {
 			POST_TYPE: 'article',
@@ -117,21 +82,7 @@ export default {
 					posts: [],
 					total: 0
 				}
-			},
-			tab: null,
-			numberPostOnPage: 8
-		}
-	},
-	computed: {
-		postsRu() {
-			const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-			this.data.ru.posts = list.ru
-			return this.data.ru.posts
-		},
-		postsUa() {
-			const list = this.$store.getters[this.POST_TYPE + '/getPosts']
-			this.data.ua.posts = list.ua
-			return this.data.ua.posts
+			}
 		}
 	}
 }

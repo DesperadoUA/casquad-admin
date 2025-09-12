@@ -10,5 +10,3 @@ export default {
 	components: { MainLoop }
 }
 </script>
-
-<style scoped></style>
