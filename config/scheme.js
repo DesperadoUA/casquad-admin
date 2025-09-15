@@ -9,6 +9,10 @@ export default {
 			{
 				action_key: 'bonus_casino',
 				title: 'Relative casino'
+			},
+			{
+				action_key: 'bonus_author',
+				title: 'Relative author'
 			}
 		]
 	},
@@ -42,6 +46,10 @@ export default {
 			{
 				action_key: 'casino_casino',
 				title: 'Relative casino'
+			},
+			{
+				action_key: 'casino_author',
+				title: 'Relative author'
 			}
 		]
 	},
@@ -55,6 +63,10 @@ export default {
 			{
 				action_key: 'news_casino',
 				title: 'Relative casino'
+			},
+			{
+				action_key: 'news_author',
+				title: 'Relative author'
 			}
 		]
 	},
@@ -64,6 +76,10 @@ export default {
 			{
 				action_key: 'category',
 				title: 'Relative category'
+			},
+			{
+				action_key: 'vendor_author',
+				title: 'Relative author'
 			}
 		]
 	},
@@ -81,6 +97,10 @@ export default {
 			{
 				action_key: 'game_casino',
 				title: 'Relative casino'
+			},
+			{
+				action_key: 'game_author',
+				title: 'Relative author'
 			}
 		]
 	},
@@ -117,6 +137,19 @@ export default {
 			{
 				action_key: 'category',
 				title: 'Relative category'
+			}
+		]
+	},
+	ARTICLE: {
+		meta: [],
+		relative: [
+			{
+				action_key: 'category',
+				title: 'Relative category'
+			},
+			{
+				action_key: 'article_author',
+				title: 'Relative author'
 			}
 		]
 	},
