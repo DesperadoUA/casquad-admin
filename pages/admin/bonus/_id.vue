@@ -7,11 +7,11 @@
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-5 mb-10">
-					<v-btn class="font-podkova-bold deep-orange darken-2" text @click="update()">
+					<v-btn class="deep-orange darken-2" text @click="update()">
 						<v-icon left color="white">mdi-content-save</v-icon>
 						Update
 					</v-btn>
-					<v-btn class="font-podkova-bold deep-orange darken-2 ml-5" text @click="postDelete()">
+					<v-btn class="deep-orange darken-2 ml-5" text @click="postDelete()">
 						<v-icon left color="white">mdi-delete</v-icon>
 						Delete
 					</v-btn>
@@ -24,66 +24,18 @@
 </template>
 
 <script>
-import commonEdit from '~/components/templates/commonEdit'
 import postMeta from '~/components/templates/meta/Bonus'
-import snackBar from '~/components/templates/snackbar'
-import postPreview from '~/components/lib/MM_Post_Preview'
-import relative from '~/components/templates/relative'
 import geoEdit from '~/components/templates/geoEdit'
+import singlePostEdit from '~/mixins/singlePostEdit'
+
 export default {
 	name: 'singleBonusPage',
-	layout: 'admin',
-	components: { commonEdit, postMeta, snackBar, postPreview, relative, geoEdit },
-	async mounted() {
-		const user = this.$store.getters['user/getUser']
-		const data = {
-			session: user.session,
-			id: user.id,
-			url: this.$route.params.id
-		}
-		await this.$store.dispatch(this.POST_TYPE + '/setCurrentPost', data)
-		this.data.body = this.$store.getters[this.POST_TYPE + '/getCurrentPost']
-	},
+	mixins: [singlePostEdit],
+	components: { postMeta, geoEdit },
 	data() {
 		return {
-			POST_TYPE: 'bonus',
-			data: {
-				body: undefined
-			},
-			snackbar: {
-				status: false,
-				text: 'Post Update',
-				timeout: 5000
-			}
-		}
-	},
-	methods: {
-		async update() {
-			const user = this.$store.getters['user/getUser']
-			const data = {
-				session: user.session,
-				id: user.id,
-				data: this.$store.getters[this.POST_TYPE + '/getCurrentPost']
-			}
-			await this.$store.dispatch(this.POST_TYPE + '/updateCurrentPost', data)
-			this.snackbar.status = true
-			setTimeout(() => {
-				this.snackbar.status = false
-			}, this.snackbar.timeout)
-		},
-		async postDelete() {
-			const user = this.$store.getters['user/getUser']
-			const data = {
-				session: user.session,
-				id: user.id,
-				data: this.$route.params.id
-			}
-			await this.$store.dispatch(this.POST_TYPE + '/deleteCurrentPost', data)
-			const confirmDelete = this.$store.getters[this.POST_TYPE + '/getConfirmDelete']
-			if (confirmDelete) this.$router.push('/admin/' + this.POST_TYPE)
+			POST_TYPE: 'bonus'
 		}
 	}
 }
 </script>
-
-<style scoped></style>
