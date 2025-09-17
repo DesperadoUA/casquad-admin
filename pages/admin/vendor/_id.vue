@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
-		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
+		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
+		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" />
 		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="VENDOR" />
 		<v-container>
 			<v-row>
@@ -19,6 +19,7 @@
 		</v-container>
 		<snackBar :status="snackbar.status" :text="snackbar.text" :timeout="snackbar.timeout" />
 		<postPreview v-if="data.body" slug="vendor" :permalink="data.body.permalink" />
+		<confirmDelete v-if="confirmDeleteIsShow" @delete="confirmDelete" @cancel="cancel" />
 	</div>
 </template>
 

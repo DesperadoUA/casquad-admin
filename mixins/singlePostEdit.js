@@ -2,9 +2,11 @@ import commonEdit from '~/components/templates/commonEdit'
 import snackBar from '~/components/templates/snackbar'
 import postPreview from '~/components/lib/MM_Post_Preview'
 import relative from '~/components/templates/relative'
+import confirmDelete from '~/components/templates/confirmDelete'
+
 export default {
 	layout: 'admin',
-	components: { commonEdit, snackBar, postPreview, relative },
+	components: { commonEdit, snackBar, postPreview, relative, confirmDelete },
 	data() {
 		return {
 			data: {
@@ -14,7 +16,8 @@ export default {
 				status: false,
 				text: 'Post Update',
 				timeout: 5000
-			}
+			},
+			confirmDeleteIsShow: false
 		}
 	},
 	async mounted() {
@@ -41,7 +44,10 @@ export default {
 				this.snackbar.status = false
 			}, this.snackbar.timeout)
 		},
-		async postDelete() {
+		postDelete() {
+			this.confirmDeleteIsShow = true
+		},
+		async confirmDelete() {
 			const user = this.$store.getters['user/getUser']
 			const data = {
 				session: user.session,
@@ -51,6 +57,9 @@ export default {
 			await this.$store.dispatch(this.POST_TYPE + '/deleteCurrentPost', data)
 			const confirmDelete = this.$store.getters[this.POST_TYPE + '/getConfirmDelete']
 			if (confirmDelete) this.$router.push('/admin/' + this.POST_TYPE)
+		},
+		cancel() {
+			this.confirmDeleteIsShow = false
 		}
 	}
 }
