@@ -27,9 +27,41 @@ import MM_Relative from '~/components/lib/MM_Relative'
 import MM_Review from '~/components/lib/MM_Review'
 import MM_Rich_Text from '~/components/lib/MM_Rich_Text'
 import MM_Textarea from '~/components/lib/MM_Textarea'
+import MM_Multiple_Three_Input_Image from '~/components/lib/MM_Multiple_Three_Input_Image'
+import MM_Multiple_Three_Input from '~/components/lib/MM_Multiple_Three_Input'
+
 export default {
 	components: {
-		MM_Characters_Game, MM_Checkbox, MM_Color_Picker, MM_Date, MM_Image, MM_Input, MM_Media_Library, MM_Multiple_Input_Deep_Double, MM_Multiple_Input_Deep, MM_Multiple_Input_Image, MM_Multiple_Input_Text_Options, MM_Multiple_Input_Text, MM_Multiple_Input, MM_Multiple_Menu, MM_Multiple_Options_Three_Input,
-        MM_Multiple_Options, MM_Multiple_Select_Three_Input, MM_Multiple_Two_Input_Image, MM_Multiple_Two_Input_Text_Image, MM_Multiple_Two_Input, MM_Options, MM_Paginations, MM_Post_Preview, MM_Rating, MM_Relative_Posts, MM_Relative, MM_Review, MM_Rich_Text, MM_Textarea
-	},
+		MM_Characters_Game,
+		MM_Checkbox,
+		MM_Color_Picker,
+		MM_Date,
+		MM_Image,
+		MM_Input,
+		MM_Media_Library,
+		MM_Multiple_Input_Deep_Double,
+		MM_Multiple_Input_Deep,
+		MM_Multiple_Input_Image,
+		MM_Multiple_Input_Text_Options,
+		MM_Multiple_Input_Text,
+		MM_Multiple_Input,
+		MM_Multiple_Menu,
+		MM_Multiple_Options_Three_Input,
+		MM_Multiple_Options,
+		MM_Multiple_Select_Three_Input,
+		MM_Multiple_Two_Input_Image,
+		MM_Multiple_Two_Input_Text_Image,
+		MM_Multiple_Two_Input,
+		MM_Options,
+		MM_Paginations,
+		MM_Post_Preview,
+		MM_Rating,
+		MM_Relative_Posts,
+		MM_Relative,
+		MM_Review,
+		MM_Rich_Text,
+		MM_Textarea,
+		MM_Multiple_Three_Input_Image,
+		MM_Multiple_Three_Input
+	}
 }

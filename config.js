@@ -49,5 +49,6 @@ export default {
 		'malta',
 		'isle_of_man'
 	],
-	GEO: ['WORLD', 'GB', 'BD', 'AU', 'GR', 'IN', 'ID', 'CA', 'NL', 'DE', 'ZA', 'PH', 'SE']
+	GEO: ['WORLD', 'GB', 'BD', 'AU', 'GR', 'IN', 'ID', 'CA', 'NL', 'DE', 'ZA', 'PH', 'SE'],
+	AUTHOR_ROLES: ['Editor-in-Chief', 'Editor Writer']
 }
