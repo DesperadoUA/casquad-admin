@@ -2,6 +2,8 @@
 	<v-container>
 		<v-row>
 			<v-col class="mt-0">
+				<MM_Input :value="data.position" :action="action" title="Position" action_key="position" />
+				<MM_Multiple_Input :value="data.advantages" :action="action" title="Advantages list" action_key="advantages" />
 				<MM_Options
 					v-if="data"
 					:value="data.role"
