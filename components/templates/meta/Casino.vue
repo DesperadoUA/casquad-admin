@@ -3,6 +3,7 @@
 		<v-row>
 			<v-col class="mt-0">
 				<MM_Image :value="data.icon" title="Icon" :action="action" action_key="icon" />
+				<MM_Image :value="data.author_card_img" title="Author card img" :action="action" action_key="author_card_img" />
 				<MM_Input :value="data.wager" :action="action" title="wager" action_key="wager" />
 				<MM_Input :value="data.min_dep" :action="action" title="min_dep" action_key="min_dep" />
 				<MM_Input :value="data.bonus_value" :action="action" title="bonus_value" action_key="bonus_value" />
