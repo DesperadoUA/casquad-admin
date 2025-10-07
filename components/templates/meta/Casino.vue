@@ -40,6 +40,8 @@
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />
+				<MM_Multiple_Input :value="data.pros" :action="action" title="Pros" action_key="pros" />
+				<MM_Multiple_Input :value="data.cons" :action="action" title="Cons" action_key="cons" />
 			</v-col>
 		</v-row>
 	</v-container>

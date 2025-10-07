@@ -23,6 +23,7 @@
 					title="Screenshots"
 					action_key="screenshots"
 				/>
+				<MM_Input :value="data.faq_title" :action="action" title="Faq title" action_key="faq_title" />
 				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
