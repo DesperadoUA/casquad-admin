@@ -1,5 +1,5 @@
 export default {
-	PROD_URL: 'https://casquads.com/',
+	PROD_URL: 'https://casquad.com/',
 	LICENSES: [
 		'ukraine',
 		'curacao',
@@ -50,5 +50,11 @@ export default {
 		'isle_of_man'
 	],
 	GEO: ['WORLD', 'GB', 'BD', 'AU', 'GR', 'IN', 'ID', 'CA', 'NL', 'DE', 'ZA', 'PH', 'SE'],
-	AUTHOR_ROLES: ['Editor-in-Chief', 'Editor Writer']
+	AUTHOR_ROLES: ['Editor-in-Chief', 'Editor Writer'],
+	BLOG_TEMPLATE_COMPONENTS: {
+		content: 0,
+		banner: 1,
+		table: 2,
+		faq: 4
+	}
 }

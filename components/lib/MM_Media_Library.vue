@@ -2,13 +2,13 @@
 	<div class="text-center media_conteiner">
 		<v-dialog v-model="dialog" width="80%">
 			<template v-slot:activator="{ on, attrs }">
-				<v-btn color="red lighten-2" dark v-bind="attrs" v-on="on" class="deep-orange darken-2 font-podkova-bold">
+				<v-btn color="red lighten-2" dark v-bind="attrs" v-on="on" class="deep-orange darken-2 ">
 					<v-icon>mdi-tooltip-image</v-icon>
 				</v-btn>
 			</template>
 
 			<v-card>
-				<v-card-title class="font-podkova-bold blue-grey darken-4">
+				<v-card-title class=" blue-grey darken-4">
 					Media Library
 				</v-card-title>
 				<v-container>
@@ -56,9 +56,7 @@
 															<div class="item_delete" @click="deleteImg(item)">X</div>
 														</div>
 													</div>
-													<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="postShowMore"
-														>Load more</v-btn
-													>
+													<v-btn class="deep-orange darken-2  mt-5" @click="postShowMore">Load more</v-btn>
 												</div>
 											</v-card-text>
 										</v-card>
@@ -80,22 +78,10 @@
 						readonly="readonly"
 						v-model="text"
 					></v-text-field>
-					<v-btn
-						color="red lighten-2"
-						dark
-						class="deep-orange darken-2 font-podkova-bold"
-						v-if="text !== ''"
-						@click="alignLeft"
-					>
+					<v-btn color="red lighten-2" dark class="deep-orange darken-2 " v-if="text !== ''" @click="alignLeft">
 						<v-icon>mdi-arrow-left-bold</v-icon>
 					</v-btn>
-					<v-btn
-						color="red lighten-2"
-						dark
-						class="deep-orange darken-2 font-podkova-bold"
-						v-if="text !== ''"
-						@click="alignRight"
-					>
+					<v-btn color="red lighten-2" dark class="deep-orange darken-2 " v-if="text !== ''" @click="alignRight">
 						<v-icon>mdi-arrow-right-bold</v-icon>
 					</v-btn>
 				</v-card-actions>

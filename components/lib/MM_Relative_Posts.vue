@@ -1,7 +1,7 @@
 <template>
 	<v-container class="container--fluid pa-0">
 		<v-row>
-			<v-col class="offset-1 col-10 font-podkova-bold blue-grey darken-4">
+			<v-col class="offset-1 col-10 blue-grey darken-4">
 				<v-expansion-panels inset>
 					<v-expansion-panel>
 						<v-expansion-panel-header>{{ title }}</v-expansion-panel-header>

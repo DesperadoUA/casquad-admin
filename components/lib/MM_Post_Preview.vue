@@ -1,11 +1,5 @@
 <template>
-	<v-btn
-		v-if="fullPath"
-		color="red lighten-2"
-		dark
-		class="deep-orange darken-2 font-podkova-bold post_preview"
-		@click="go"
-	>
+	<v-btn v-if="fullPath" color="red lighten-2" dark class="deep-orange darken-2  post_preview" @click="go">
 		<v-icon>mdi-page-next</v-icon>
 	</v-btn>
 </template>

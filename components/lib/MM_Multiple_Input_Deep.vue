@@ -1,7 +1,7 @@
 <template>
 	<v-container class="container--fluid pa-0">
 		<v-row>
-			<v-col class="offset-1 col-10 font-podkova-bold blue-grey darken-4">
+			<v-col class="offset-1 col-10  blue-grey darken-4">
 				<v-expansion-panels inset>
 					<v-expansion-panel>
 						<v-expansion-panel-header>{{ title }}</v-expansion-panel-header>
@@ -16,7 +16,7 @@
 											v-model="currenData[index].value"
 											@change="change"
 										></v-text-field>
-										<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="deleteItem(item)">
+										<v-btn class="deep-orange darken-2  mt-5" @click="deleteItem(item)">
 											<v-icon left>mdi-delete</v-icon>
 											Delete
 										</v-btn>
@@ -34,17 +34,14 @@
 												></v-text-field>
 											</div>
 											<div class="col-2 text-right">
-												<v-btn
-													class="deep-orange darken-2 font-podkova-bold mt-5"
-													@click="deleteItemChild(index, indexChild)"
-												>
+												<v-btn class="deep-orange darken-2  mt-5" @click="deleteItemChild(index, indexChild)">
 													<v-icon left>mdi-delete</v-icon>
 													Delete
 												</v-btn>
 											</div>
 										</v-row>
 										<div class="col-12 text-right">
-											<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="addItemChild(index)">
+											<v-btn class="deep-orange darken-2  mt-5" @click="addItemChild(index)">
 												<v-icon left>mdi-playlist-plus</v-icon>
 												Add
 											</v-btn>
@@ -52,7 +49,7 @@
 									</v-container>
 								</v-row>
 							</v-container>
-							<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="addItem">
+							<v-btn class="deep-orange darken-2  mt-5" @click="addItem">
 								<v-icon left>mdi-playlist-plus</v-icon>
 								Add
 							</v-btn>

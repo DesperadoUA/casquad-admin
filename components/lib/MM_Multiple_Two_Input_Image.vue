@@ -1,7 +1,7 @@
 <template>
 	<v-container class="container--fluid pa-0">
 		<v-row>
-			<v-col class="offset-1 col-10 font-podkova-bold blue-grey darken-4">
+			<v-col class="offset-1 col-10  blue-grey darken-4">
 				<v-expansion-panels inset>
 					<v-expansion-panel>
 						<v-expansion-panel-header>{{ title }}</v-expansion-panel-header>
@@ -36,14 +36,14 @@
 											v-model="currenData[index].value_2"
 											@change="change"
 										></v-text-field>
-										<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="deleteItem(item)">
+										<v-btn class="deep-orange darken-2  mt-5" @click="deleteItem(item)">
 											<v-icon left>mdi-delete</v-icon>
 											Delete
 										</v-btn>
 									</div>
 								</v-row>
 							</v-container>
-							<v-btn class="deep-orange darken-2 font-podkova-bold mt-5" @click="addItem">
+							<v-btn class="deep-orange darken-2  mt-5" @click="addItem">
 								<v-icon left>mdi-playlist-plus</v-icon>
 								Add
 							</v-btn>

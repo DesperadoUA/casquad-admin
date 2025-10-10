@@ -6,7 +6,7 @@
 					<v-container class="max-width">
 						<v-pagination
 							v-model="page"
-							class="my-4 font-podkova-bold "
+							class="my-4"
 							:total-visible="7"
 							:length="length"
 							@click="changePage()"
