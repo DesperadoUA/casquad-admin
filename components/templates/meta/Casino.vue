@@ -42,6 +42,8 @@
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />
 				<MM_Multiple_Input :value="data.pros" :action="action" title="Pros" action_key="pros" />
 				<MM_Multiple_Input :value="data.cons" :action="action" title="Cons" action_key="cons" />
+				<MM_Input :value="data.payout" :action="action" title="Payout" action_key="payout" />
+				<MM_Input :value="data.win_rate" :action="action" title="Win rate" action_key="win_rate" />
 			</v-col>
 		</v-row>
 	</v-container>
