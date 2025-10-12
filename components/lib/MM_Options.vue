@@ -27,7 +27,7 @@
 <script>
 export default {
 	name: 'MM_Options',
-	props: ['value', 'title', , 'action', 'action_key', 'all_value'],
+	props: ['value', 'title', 'action', 'action_key', 'all_value'],
 	data: () => ({
 		items: [],
 		current_value: ''

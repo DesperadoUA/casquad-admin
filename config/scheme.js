@@ -150,6 +150,18 @@ export default {
 			{
 				action_key: 'article_author',
 				title: 'Relative author'
+			},
+			{
+				action_key: 'article_casino',
+				title: 'Relative casino'
+			},
+			{
+				action_key: 'article_game',
+				title: 'Relative game'
+			},
+			{
+				action_key: 'article_news',
+				title: 'Relative news'
 			}
 		]
 	},
