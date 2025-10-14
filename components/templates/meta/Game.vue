@@ -28,6 +28,19 @@
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />
+				<MM_Order_Components
+					:value="listComponents(data.order_components)"
+					:action="action"
+					title="Order Components"
+					action_key="order_components"
+				/>
+				<MM_Nav_Menu
+					:items="templateComponents"
+					:value="data.nav_menu"
+					:action="action"
+					title="Nav menu"
+					action_key="nav_menu"
+				/>
 			</v-col>
 		</v-row>
 	</v-container>
@@ -41,7 +54,19 @@ export default {
 	props: ['data', 'action'],
 	data() {
 		return {
-			geo: config.GEO
+			geo: config.GEO,
+			templateComponents: Object.keys(config.SLOT_TEMPLATE_COMPONENTS)
+		}
+	},
+	methods: {
+		listComponents(list) {
+			const data = {}
+			for (const key in config.SLOT_TEMPLATE_COMPONENTS) {
+				if (config.SLOT_TEMPLATE_COMPONENTS.hasOwnProperty(key)) {
+					data[key] = list[key] || config.SLOT_TEMPLATE_COMPONENTS[key]
+				}
+			}
+			return data
 		}
 	},
 	mixins: [global]

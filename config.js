@@ -69,5 +69,23 @@ export default {
 		content_10: 15,
 		author_summary: 16,
 		reviews: 17
+	},
+	SLOT_TEMPLATE_COMPONENTS: {
+		breadcrumbs: 1,
+		top_card: 2,
+		nav_menu: 3,
+		top_casinos: 4,
+		video: 5,
+		characters: 6,
+		details: 7,
+		rtp: 8,
+		symbols: 9,
+		screenshots: 10,
+		content: 11,
+		mobile_version: 12,
+		pros_cons: 13,
+		games: 14,
+		faq: 15,
+		author_summary: 16
 	}
 }
