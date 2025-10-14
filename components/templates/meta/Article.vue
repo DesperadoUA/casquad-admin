@@ -25,6 +25,13 @@
 					title="Order Components"
 					action_key="order_components"
 				/>
+				<MM_Nav_Menu
+					:items="blogTemplateComponents"
+					:value="data.nav_menu"
+					:action="action"
+					title="Nav menu"
+					action_key="nav_menu"
+				/>
 			</v-col>
 		</v-row>
 	</v-container>
@@ -38,6 +45,11 @@ export default {
 	name: 'articleMeta',
 	props: ['data', 'action'],
 	mixins: [global],
+	data() {
+		return {
+			blogTemplateComponents: Object.keys(config.BLOG_TEMPLATE_COMPONENTS)
+		}
+	},
 	methods: {
 		listComponents(list) {
 			const data = {}

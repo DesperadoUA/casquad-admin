@@ -29,6 +29,7 @@ import MM_Rich_Text from '~/components/lib/MM_Rich_Text'
 import MM_Textarea from '~/components/lib/MM_Textarea'
 import MM_Multiple_Three_Input_Image from '~/components/lib/MM_Multiple_Three_Input_Image'
 import MM_Multiple_Three_Input from '~/components/lib/MM_Multiple_Three_Input'
+import MM_Nav_Menu from '~/components/lib/MM_Nav_Menu'
 
 export default {
 	components: {
@@ -62,6 +63,7 @@ export default {
 		MM_Rich_Text,
 		MM_Textarea,
 		MM_Multiple_Three_Input_Image,
-		MM_Multiple_Three_Input
+		MM_Multiple_Three_Input,
+		MM_Nav_Menu
 	}
 }
