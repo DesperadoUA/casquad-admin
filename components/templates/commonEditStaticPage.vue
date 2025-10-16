@@ -3,7 +3,7 @@
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-10">
-					<h1 class="page_title font-podkova-bold" v-if="data">{{ current_title }}</h1>
+					<h1 class="page_title" v-if="data">{{ current_title }}</h1>
 				</v-col>
 			</v-row>
 			<v-row>
@@ -52,6 +52,12 @@
 					<MM_Image v-if="data" :value="data.thumbnail" title="Thumbnail" :action="action" action_key="thumbnail" />
 					<MM_Image v-if="data" :value="data.social_img" title="Social Img" :action="action" action_key="social_img" />
 					<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
+					<MM_Relative_Posts
+						:value="data.page_author"
+						:action="action"
+						title="Page author relative"
+						action_key="page_author"
+					/>
 					<MM_Media_Library />
 				</v-col>
 			</v-row>

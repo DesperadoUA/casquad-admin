@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<commonEditStaticPage v-if="data.body" :data="data.body" :action="'static_pages/changeStateCurrentPage'">
-		</commonEditStaticPage>
+		<commonEditStaticPage v-if="data.body" :data="data.body" action="static_pages/changeStateCurrentPage" />
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-5 mb-10">
@@ -11,17 +10,17 @@
 				</v-col>
 			</v-row>
 		</v-container>
-		<snackeBar :status="snackbar.status" :text="snackbar.text" :timeout="snackbar.timeout" />
+		<snackBar :status="snackbar.status" :text="snackbar.text" :timeout="snackbar.timeout" />
 	</div>
 </template>
 
 <script>
 import commonEditStaticPage from '~/components/templates/commonEditStaticPage'
-import snackeBar from '~/components/templates/snackbar'
+import snackBar from '~/components/templates/snackbar'
 export default {
 	name: 'singleStaticPage',
 	layout: 'admin',
-	components: { commonEditStaticPage, snackeBar },
+	components: { commonEditStaticPage, snackBar },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {
