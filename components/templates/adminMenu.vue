@@ -4,13 +4,13 @@
 			<v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
 			<v-spacer></v-spacer>
 			<v-toolbar-items class="hidden-sm-and-down">
-				<v-btn text exact class="font-podkova-bold nav-link" v-for="link in links" :key="link.title" :to="link.url">
+				<v-btn text exact class="nav-link" v-for="link in links" :key="link.title" :to="link.url">
 					{{ link.title }}
 				</v-btn>
-				<v-btn text exact class="font-podkova-bold nav-link" to="/admin/reviews" no-prefetch>
+				<v-btn text exact class=" nav-link" to="/admin/reviews" no-prefetch>
 					Reviews
 				</v-btn>
-				<v-btn text exact class="font-podkova-bold nav-link" @click="logout" no-prefetch>
+				<v-btn text exact class=" nav-link" @click="logout" no-prefetch>
 					LOGOUT
 				</v-btn>
 			</v-toolbar-items>
@@ -18,27 +18,16 @@
 		<v-navigation-drawer app temporary v-model="drawer" class="grey darken-4" color="deep-orange darken-2">
 			<v-container>
 				<v-layout class="mt-5 mb-5" wrap>
-					<v-btn
-						class="deep-orange darken-2 justify-start display_block mb-5 font-podkova-bold"
-						dark
-						exact
-						no-prefetch
-						to="/admin"
-					>
+					<v-btn class="deep-orange darken-2 justify-start display_block mb-5" dark exact no-prefetch to="/admin">
 						<v-icon left color="white">mdi-bank</v-icon>
 						Main
 					</v-btn>
-					<v-btn
-						class="deep-orange darken-2 justify-start display_block mb-5 font-podkova-bold"
-						dark
-						no-prefetch
-						to="/admin/settings"
-					>
+					<v-btn class="deep-orange darken-2 justify-start display_block mb-5" dark no-prefetch to="/admin/settings">
 						<v-icon left color="white">mdi-message-draw</v-icon>
 						Settings
 					</v-btn>
 					<v-btn
-						class="deep-orange darken-2 justify-start display_block mb-5 font-podkova-bold"
+						class="deep-orange darken-2 justify-start display_block mb-5"
 						dark
 						no-prefetch
 						to="/admin/static-pages"
@@ -46,23 +35,13 @@
 						<v-icon left color="white">mdi-checkbox-multiple-blank</v-icon>
 						Static Pages
 					</v-btn>
-					<v-btn
-						class="deep-orange darken-2 justify-start display_block mb-5 font-podkova-bold"
-						dark
-						no-prefetch
-						to="/admin/options"
-					>
+					<v-btn class="deep-orange darken-2 justify-start display_block mb-5" dark no-prefetch to="/admin/options">
 						<v-icon left color="white">mdi-share-variant</v-icon>
 						Options
 					</v-btn>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Casino
 							</v-btn>
@@ -83,24 +62,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Vendors
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in vendorsPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in vendorsPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -109,18 +77,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								News
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item no-prefetch class="font-podkova-bold" v-for="(item, i) in newsPage" :key="i" :to="item.link">
+							<v-list-item no-prefetch v-for="(item, i) in newsPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -129,24 +92,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Slots
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in slotsPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in slotsPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -155,24 +107,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Bonuses
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in bonusesPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in bonusesPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -181,24 +122,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Currencies
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in currencyPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in currencyPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -207,24 +137,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Languages
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in languagePage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in languagePage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -233,24 +152,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Payments
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in paymentPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in paymentPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -259,24 +167,13 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Authors
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in authorPage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in authorPage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -285,24 +182,28 @@
 					</v-menu>
 					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
 						<template v-slot:activator="{ on, attrs }">
-							<v-btn
-								class="deep-orange mt-5 darken-2 justify-start display_block font-podkova-bold"
-								dark
-								v-bind="attrs"
-								v-on="on"
-							>
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
+								<v-icon left>mdi-folder-multiple-outline</v-icon>
+								Funnel
+							</v-btn>
+						</template>
+						<v-list>
+							<v-list-item no-prefetch v-for="(item, i) in funnelPage" :key="i" :to="item.link">
+								<v-list-item-title>
+									{{ item.title }}
+								</v-list-item-title>
+							</v-list-item>
+						</v-list>
+					</v-menu>
+					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
+						<template v-slot:activator="{ on, attrs }">
+							<v-btn class="deep-orange mt-5 darken-2 justify-start display_block" dark v-bind="attrs" v-on="on">
 								<v-icon left>mdi-folder-multiple-outline</v-icon>
 								Blog
 							</v-btn>
 						</template>
 						<v-list>
-							<v-list-item
-								no-prefetch
-								class="font-podkova-bold"
-								v-for="(item, i) in articlePage"
-								:key="i"
-								:to="item.link"
-							>
+							<v-list-item no-prefetch v-for="(item, i) in articlePage" :key="i" :to="item.link">
 								<v-list-item-title>
 									{{ item.title }}
 								</v-list-item-title>
@@ -313,7 +214,7 @@
 				<v-layout class="justify-space-around mt-3 align-center">
 					<v-btn
 						class="deep-orange darken-2 display_block justify-start"
-						color="deep-orange darken-2 font-podkova-bold"
+						color="deep-orange darken-2"
 						to="/admin/reviews"
 					>
 						<v-icon left color="white">mdi-folder-multiple-outline</v-icon>
@@ -321,11 +222,7 @@
 					</v-btn>
 				</v-layout>
 				<v-layout class="justify-space-around mt-3 align-center">
-					<v-btn
-						class="deep-orange darken-2 display_block justify-start"
-						color="deep-orange darken-2 font-podkova-bold"
-						@click="logout"
-					>
+					<v-btn class="deep-orange darken-2 display_block justify-start" color="deep-orange darken-2" @click="logout">
 						<v-icon left color="white">mdi-logout</v-icon>
 						Logout
 					</v-btn>
@@ -355,7 +252,8 @@ export default {
 				{ title: 'LANGUAGES', url: '/admin/language', icon: 'mdi-gamepad-variant' },
 				{ title: 'PAYMENTS', url: '/admin/payment', icon: 'mdi-gamepad-variant' },
 				{ title: 'AUTHORS', url: '/admin/author', icon: 'mdi-gamepad-variant' },
-				{ title: 'BLOG', url: '/admin/article', icon: 'mdi-gamepad-variant' }
+				{ title: 'BLOG', url: '/admin/article', icon: 'mdi-gamepad-variant' },
+				{ title: 'FUNNEL', url: '/admin/funnel', icon: 'mdi-gamepad-variant' }
 			],
 			casinoPage: [
 				{ title: 'All casino', link: '/admin/casino' },
@@ -416,6 +314,12 @@ export default {
 				{ title: 'Add article', link: '/admin/article/add' },
 				{ title: 'All category article', link: '/admin/article/category' },
 				{ title: 'Add category article', link: '/admin/article/category/add' }
+			],
+			funnelPage: [
+				{ title: 'All funnels', link: '/admin/funnel' },
+				{ title: 'Add funnel', link: '/admin/funnel/add' },
+				{ title: 'All category funnel', link: '/admin/funnel/category' },
+				{ title: 'Add category funnel', link: '/admin/funnel/category/add' }
 			]
 		}
 	},
