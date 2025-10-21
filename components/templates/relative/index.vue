@@ -18,6 +18,7 @@
 <script>
 import global from '~/mixins/global'
 import scheme from '~/config/scheme'
+
 export default {
 	name: 'bonusCategory',
 	props: ['data', 'action', 'postType'],

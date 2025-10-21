@@ -87,5 +87,25 @@ export default {
 		games: 14,
 		faq: 15,
 		author_summary: 16
+	},
+	FUNNEL_TEMPLATE_COMPONENTS: {
+		breadcrumbs: 1,
+		banner: 2,
+		nav_menu: 3,
+		content_1: 4,
+		top_casinos: 5,
+		content_2: 6,
+		games: 7,
+		content_4: 8,
+		content_5: 9,
+		content_6: 10,
+		content_7: 11,
+		content_8: 12,
+		pros_cons: 13,
+		content_9: 14,
+		content_10: 15,
+		faq: 16,
+		reviews: 17,
+		author_summary: 18
 	}
 }

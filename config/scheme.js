@@ -165,6 +165,31 @@ export default {
 			}
 		]
 	},
+	FUNNEL: {
+		meta: [],
+		relative: [
+			{
+				action_key: 'category',
+				title: 'Relative category'
+			},
+			{
+				action_key: 'funnel_author',
+				title: 'Relative author'
+			},
+			{
+				action_key: 'funnel_casino',
+				title: 'Relative casino'
+			},
+			{
+				action_key: 'funnel_game',
+				title: 'Relative game'
+			},
+			{
+				action_key: 'funnel_news',
+				title: 'Relative news'
+			}
+		]
+	},
 	DEFAULT: {
 		meta: [],
 		relative: [
