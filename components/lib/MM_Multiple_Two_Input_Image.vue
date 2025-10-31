@@ -22,20 +22,22 @@
 										<label :for="'file_' + action_key + '_' + index" class="mt-7">Choose a file ...</label>
 									</div>
 									<div class="col-lg-6 col-xs-12">
+										<div class="color-orange" v-if="labels">{{ labels.title }}</div>
 										<v-text-field
 											prepend-icon="mdi-tooltip-edit"
 											type="text"
 											color="deep-orange darken-2"
 											v-model="currenData[index].value_1"
 											@change="change"
-										></v-text-field>
+										/>
+										<div class="color-orange" v-if="labels">{{ labels.subTitle }}</div>
 										<v-text-field
 											prepend-icon="mdi-tooltip-edit"
 											type="text"
 											color="deep-orange darken-2"
 											v-model="currenData[index].value_2"
 											@change="change"
-										></v-text-field>
+										/>
 										<v-btn class="deep-orange darken-2  mt-5" @click="deleteItem(item)">
 											<v-icon left>mdi-delete</v-icon>
 											Delete
@@ -59,7 +61,7 @@
 import selectFile from '~/components/mixins/selectFile'
 export default {
 	name: 'MM_Multiple_Two_Input_Image',
-	props: ['value', 'title', 'action', 'action_key'],
+	props: ['value', 'title', 'action', 'action_key', 'labels'],
 	mixins: [selectFile],
 	data() {
 		return {

@@ -51,7 +51,14 @@
 					/>
 					<MM_Image v-if="data" :value="data.thumbnail" title="Thumbnail" :action="action" action_key="thumbnail" />
 					<MM_Image v-if="data" :value="data.social_img" title="Social Img" :action="action" action_key="social_img" />
+					<MM_Input v-if="data" :value="data.faq_title" title="Faq title" :action="action" action_key="faq_title" />
 					<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
+					<MM_Textarea
+						:value="data.author_summary"
+						:action="action"
+						title="Author summary"
+						action_key="author_summary"
+					/>
 					<MM_Relative_Posts
 						:value="data.page_author"
 						:action="action"

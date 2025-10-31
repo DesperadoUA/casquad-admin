@@ -41,6 +41,9 @@
 				/>
 				<MM_Input :value="data.faq_title" :action="action" title="Faq title" action_key="faq_title" />
 				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
+				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
+				<MM_Rich_Text :value="data.video_text" :action="action" title="Video text" action_key="video_text" />
+	            <MM_Checkbox :value="data.show_main_page" :action="action" title="Show on main page" action_key="show_main_page" />				
 			</v-col>
 		</v-row>
 	</v-container>
