@@ -124,6 +124,7 @@
 				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 				<MM_Rich_Text :value="data.video_text" :action="action" title="Video text" action_key="video_text" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
+				<MM_Input :value="data.details_title" :action="action" title="Details title" action_key="details_title" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.details"
 					:action="action"
@@ -134,6 +135,46 @@
 						subTitle: 'Sub title'
 					}"
 				/>
+				<MM_Input
+					:value="data.rtp_description_title"
+					:action="action"
+					title="Rtp description title"
+					action_key="rtp_description_title"
+				/>
+				<MM_Rich_Text
+					:value="data.rtp_description"
+					:action="action"
+					title="Rtp description"
+					action_key="rtp_description"
+				/>
+				<MM_Input :value="data.pros_cons_title" :action="action" title="Pros cons title" action_key="pros_cons_title" />
+				<MM_Input :value="data.pros_title" :action="action" title="Pros title" action_key="pros_title" />
+				<MM_Input :value="data.cons_title" :action="action" title="Cons title" action_key="cons_title" />
+				<MM_Multiple_Input :value="data.pros" :action="action" title="Pros" action_key="pros" />
+				<MM_Multiple_Input :value="data.cons" :action="action" title="Cons" action_key="cons" />
+				<MM_Input :value="data.bonuses_title" :action="action" title="Bonuses title" action_key="bonuses_title" />
+				<MM_Rich_Text :value="data.bonuses_text" :action="action" title="Bonuses text" action_key="bonuses_text" />
+				<MM_Input :value="data.games_title" :action="action" title="Games title" action_key="games_title" />
+				<MM_Rich_Text :value="data.games_text" :action="action" title="Games text" action_key="games_text" />
+				<MM_Checkbox
+					:value="data.mobile_version_ios"
+					:action="action"
+					title="Mobile version ios"
+					action_key="mobile_version_ios"
+				/>
+				<MM_Checkbox
+					:value="data.mobile_one_hand_use"
+					:action="action"
+					title="Mobile one hand use"
+					action_key="mobile_one_hand_use"
+				/>
+				<MM_Checkbox
+					:value="data.mobile_autospins"
+					:action="action"
+					title="Mobile autospins"
+					action_key="mobile_autospins"
+				/>
+				<MM_Checkbox :value="data.mobile_tls" :action="action" title="Mobile TLS" action_key="mobile_tls" />
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />
 				<MM_Order_Components
 					:value="listComponents(data.order_components)"

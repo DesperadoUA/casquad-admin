@@ -101,6 +101,10 @@ export default {
 			{
 				action_key: 'game_author',
 				title: 'Relative author'
+			},
+			{
+				action_key: 'game_game',
+				title: 'Relative games'
 			}
 		]
 	},

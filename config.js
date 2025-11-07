@@ -51,6 +51,7 @@ export default {
 	],
 	GEO: ['WORLD', 'GB', 'BD', 'AU', 'GR', 'IN', 'ID', 'CA', 'NL', 'DE', 'ZA', 'PH', 'SE'],
 	AUTHOR_ROLES: ['Editor-in-Chief', 'Editor Writer'],
+	LABELS: ['popular', 'new', 'trusted', 'best'],
 	BLOG_TEMPLATE_COMPONENTS: {
 		breadcrumbs: 1,
 		banner: 2,
@@ -84,10 +85,11 @@ export default {
 		content: 11,
 		mobile_version: 12,
 		pros_cons: 13,
-		games: 14,
-		faq: 15,
-		reviews: 16,
-		author_summary: 17
+		bonuses: 14,
+		games: 15,
+		faq: 16,
+		reviews: 17,
+		author_summary: 18
 	},
 	FUNNEL_TEMPLATE_COMPONENTS: {
 		breadcrumbs: 1,
