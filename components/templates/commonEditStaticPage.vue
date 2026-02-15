@@ -51,6 +51,41 @@
 						:action="action"
 						action_key="content_10"
 					/>
+					<MM_Rich_Text
+						v-if="data"
+						:value="data.сontent_11"
+						title="Content 11"
+						:action="action"
+						action_key="content_11"
+					/>
+					<MM_Rich_Text
+						v-if="data"
+						:value="data.content_12"
+						title="Content 12"
+						:action="action"
+						action_key="content_12"
+					/>
+					<MM_Rich_Text
+						v-if="data"
+						:value="data.content_13"
+						title="Content 13"
+						:action="action"
+						action_key="content_13"
+					/>
+					<MM_Rich_Text
+						v-if="data"
+						:value="data.content_14"
+						title="Content 14"
+						:action="action"
+						action_key="content_14"
+					/>
+					<MM_Rich_Text
+						v-if="data"
+						:value="data.content_15"
+						title="Content 15"
+						:action="action"
+						action_key="content_15"
+					/>
 					<MM_Date
 						v-if="data"
 						:value="data.create_at.slice(0, 10)"
