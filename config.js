@@ -75,6 +75,7 @@ export default {
 		'BE',
 		'PL',
 		'PT',
+		'ES',
 		'RO',
 		'NO',
 		'BR',
@@ -115,11 +116,10 @@ export default {
 		content: 11,
 		mobile_version: 12,
 		pros_cons: 13,
-		bonuses: 14,
-		games: 15,
-		faq: 16,
-		reviews: 17,
-		author_summary: 18
+		games: 14,
+		faq: 15,
+		reviews: 16,
+		author_summary: 17
 	},
 	FUNNEL_TEMPLATE_COMPONENTS: {
 		breadcrumbs: 1,

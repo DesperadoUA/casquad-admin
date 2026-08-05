@@ -3,12 +3,19 @@
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-10">
-					<h1 class="page_title" v-if="data">{{ current_title }}</h1>
+					<h1 class="page_title font-podkova-bold">Add Static Page</h1>
 				</v-col>
 			</v-row>
 			<v-row>
 				<v-col class="mt-0">
-					<MM_Input v-if="data" :value="data.title" :title="'Title'" :action="action" :action_key="'title'" />
+					<MM_Input v-if="data" :value="data.title" title="Title" :action="action" action_key="title" />
+					<MM_Input
+						v-if="data"
+						:value="data.permalink"
+						title="Permalink"
+						:action="action"
+						action_key="permalink"
+					/>
 					<MM_Options
 						v-if="data"
 						:value="data.status"
@@ -16,6 +23,14 @@
 						title="Status"
 						:action="action"
 						action_key="status"
+					/>
+					<MM_Options
+						v-if="data"
+						:value="data.lang"
+						:all_value="['ru', 'ua']"
+						title="Lang"
+						:action="action"
+						action_key="lang"
 					/>
 					<MM_Input v-if="data" :value="data.meta_title" title="Meta Title" :action="action" action_key="meta_title" />
 					<MM_Input
@@ -62,7 +77,7 @@
 					/>
 					<MM_Rich_Text
 						v-if="data"
-						:value="data.сontent_11"
+						:value="data.content_11"
 						title="Content 11"
 						:action="action"
 						action_key="content_11"
@@ -95,20 +110,6 @@
 						:action="action"
 						action_key="content_15"
 					/>
-					<MM_Date
-						v-if="data"
-						:value="data.create_at.slice(0, 10)"
-						title="Create At"
-						:action="action"
-						action_key="create_at"
-					/>
-					<MM_Date
-						v-if="data"
-						:value="data.update_at.slice(0, 10)"
-						title="Update At"
-						:action="action"
-						action_key="update_at"
-					/>
 					<MM_Image v-if="data" :value="data.thumbnail" title="Thumbnail" :action="action" action_key="thumbnail" />
 					<MM_Image v-if="data" :value="data.social_img" title="Social Img" :action="action" action_key="social_img" />
 					<MM_Input v-if="data" :value="data.faq_title" title="Faq title" :action="action" action_key="faq_title" />
@@ -119,36 +120,30 @@
 						title="Author summary"
 						action_key="author_summary"
 					/>
-					<MM_Relative_Posts
-						:value="data.page_author"
+					<MM_Input
+						v-if="data"
+						:value="data.pros_cons_title"
+						title="Pros/Cons block title"
 						:action="action"
-						title="Page author relative"
-						action_key="page_author"
+						action_key="pros_cons_title"
 					/>
-				<MM_Relative_Posts
-					:value="pageCasinoRelative"
-					:action="action"
-					title="Page casino relative"
-					action_key="page_casino"
-				/>
-				<MM_Casino_Ref
-					v-if="data"
-					:casinoList="casinoListForRef"
-					:casinoRef="data.casino_ref || []"
-					:action="action"
-				/>
-				<MM_Input
-					v-if="data"
-					:value="data.pros_cons_title"
-					title="Pros/Cons block title"
-					:action="action"
-					action_key="pros_cons_title"
-				/>
-				<MM_Input v-if="data" :value="data.pros_title" title="Pros title" :action="action" action_key="pros_title" />
-				<MM_Multiple_Input v-if="data" :value="data.pros" :action="action" title="Pros" action_key="pros" />
-				<MM_Input v-if="data" :value="data.cons_title" title="Cons title" :action="action" action_key="cons_title" />
-				<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
-				<MM_Media_Library />
+					<MM_Input
+						v-if="data"
+						:value="data.pros_title"
+						title="Pros title"
+						:action="action"
+						action_key="pros_title"
+					/>
+					<MM_Multiple_Input v-if="data" :value="data.pros" :action="action" title="Pros" action_key="pros" />
+					<MM_Input
+						v-if="data"
+						:value="data.cons_title"
+						title="Cons title"
+						:action="action"
+						action_key="cons_title"
+					/>
+					<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
+					<MM_Media_Library />
 				</v-col>
 			</v-row>
 		</v-container>
@@ -156,39 +151,9 @@
 </template>
 <script>
 import global from '~/mixins/global'
-import MM_Casino_Ref from '~/components/lib/MM_Casino_Ref'
 export default {
-	name: 'commonEditStaticPage',
+	name: 'commonAddStaticPage',
 	props: ['data', 'action'],
-	mixins: [global],
-	components: { MM_Casino_Ref },
-	computed: {
-		pageCasinoRelative() {
-			if (!this.data) return { current_value: [], all_value: [] }
-			const v = this.data.page_casino
-			if (!v || !Array.isArray(v.all_value)) return { current_value: [], all_value: [] }
-			const currentValue = Array.isArray(v.current_value)
-				? v.current_value.map((item) => (typeof item === 'object' && item !== null ? item.title : item))
-				: []
-			return { current_value: currentValue, all_value: v.all_value }
-		},
-		casinoListForRef() {
-			return this.initialCasinoList
-		}
-	},
-	data() {
-		return {
-			current_title: '',
-			initialCasinoList: []
-		}
-	},
-	mounted() {
-		this.current_title = this.data.title
-		if (this.data.page_casino && Array.isArray(this.data.page_casino.current_value)) {
-			this.initialCasinoList = this.data.page_casino.current_value.filter(
-				(item) => item && typeof item === 'object' && item.id
-			)
-		}
-	}
+	mixins: [global]
 }
 </script>

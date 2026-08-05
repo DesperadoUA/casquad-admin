@@ -22,6 +22,20 @@
 						:title="data.title"
 						:action_key="'value'"
 					/>
+					<MM_Casino_Geo_Order
+						v-if="data.editor === 'casino_geo_order'"
+						:value="data.value"
+						:title="data.title"
+						:action="action"
+						action_key="value"
+					/>
+					<MM_Multiple_Two_Input
+						v-if="data.editor === 'multiple_two_input'"
+						:value="data.value"
+						:title="data.title"
+						:action="action"
+						action_key="value"
+					/>
 				</v-col>
 			</v-row>
 		</v-container>
@@ -40,11 +54,13 @@
 
 <script>
 import MM_Multiple_Input from '~/components/lib/MM_Multiple_Input'
+import MM_Casino_Geo_Order from '~/components/lib/MM_Casino_Geo_Order'
+import MM_Multiple_Two_Input from '~/components/lib/MM_Multiple_Two_Input'
 import snackeBar from '~/components/templates/snackbar'
 export default {
 	name: 'singleOptions',
 	layout: 'admin',
-	components: { snackeBar, MM_Multiple_Input },
+	components: { snackeBar, MM_Multiple_Input, MM_Casino_Geo_Order, MM_Multiple_Two_Input },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {
@@ -54,7 +70,6 @@ export default {
 		}
 		await this.$store.dispatch('options/setCurrentPage', data)
 		this.data = this.$store.getters['options/getCurrentPage']
-		console.log(this.data)
 	},
 	data() {
 		return {

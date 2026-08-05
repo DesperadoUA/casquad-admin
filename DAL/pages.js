@@ -10,5 +10,8 @@ class DAL_Pages {
     static updatePage(data) {
         return axios.post(config.API_URL + `pages/update`, data)
     }
+    static storePage(data) {
+        return axios.post(config.API_URL + `pages/store`, data)
+    }
 }
 export default DAL_Pages

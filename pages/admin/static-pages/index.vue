@@ -2,8 +2,13 @@
 	<div>
 		<v-container class="container--fluid">
 			<v-row>
-				<v-col class="offset-1 col-10 mt-10">
+				<v-col class="offset-1 col-10 mt-10 d-flex align-center">
 					<h1 class="page_title font-podkova-bold">Static Pages</h1>
+					<v-spacer />
+					<v-btn class="font-podkova-bold deep-orange darken-2" to="/admin/static-pages/add">
+						<v-icon left color="white">mdi-folder-plus</v-icon>
+						Create
+					</v-btn>
 				</v-col>
 			</v-row>
 			<v-row>

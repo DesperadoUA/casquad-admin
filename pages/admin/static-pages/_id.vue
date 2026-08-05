@@ -11,16 +11,19 @@
 			</v-row>
 		</v-container>
 		<snackBar :status="snackbar.status" :text="snackbar.text" :timeout="snackbar.timeout" />
+		<postPreview v-if="data.body && pagePreviewPath" :permalink="pagePreviewPath" />
 	</div>
 </template>
 
 <script>
 import commonEditStaticPage from '~/components/templates/commonEditStaticPage'
 import snackBar from '~/components/templates/snackbar'
+import postPreview from '~/components/lib/MM_Post_Preview'
+
 export default {
 	name: 'singleStaticPage',
 	layout: 'admin',
-	components: { commonEditStaticPage, snackBar },
+	components: { commonEditStaticPage, snackBar, postPreview },
 	async mounted() {
 		const user = this.$store.getters['user/getUser']
 		const data = {
@@ -41,6 +44,13 @@ export default {
 				text: 'Post Update',
 				timeout: 5000
 			}
+		}
+	},
+	computed: {
+		pagePreviewPath() {
+			const page = this.data.body
+			if (!page) return ''
+			return page.url || page.permalink || ''
 		}
 	},
 	methods: {

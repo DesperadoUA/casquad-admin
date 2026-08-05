@@ -26,15 +26,21 @@
 						<v-icon left color="white">mdi-message-draw</v-icon>
 						Settings
 					</v-btn>
-					<v-btn
-						class="deep-orange darken-2 justify-start display_block mb-5"
-						dark
-						no-prefetch
-						to="/admin/static-pages"
-					>
-						<v-icon left color="white">mdi-checkbox-multiple-blank</v-icon>
-						Static Pages
-					</v-btn>
+					<v-menu transition="slide-y-transition" bottom no-prefetch class="d-block">
+						<template v-slot:activator="{ on, attrs }">
+							<v-btn class="deep-orange darken-2 justify-start display_block mb-5" dark v-bind="attrs" v-on="on">
+								<v-icon left color="white">mdi-checkbox-multiple-blank</v-icon>
+								Static Pages
+							</v-btn>
+						</template>
+						<v-list>
+							<v-list-item no-prefetch v-for="(item, i) in staticPages" :key="i" :to="item.link">
+								<v-list-item-title>
+									{{ item.title }}
+								</v-list-item-title>
+							</v-list-item>
+						</v-list>
+					</v-menu>
 					<v-btn class="deep-orange darken-2 justify-start display_block mb-5" dark no-prefetch to="/admin/options">
 						<v-icon left color="white">mdi-share-variant</v-icon>
 						Options
@@ -254,6 +260,10 @@ export default {
 				{ title: 'AUTHORS', url: '/admin/author', icon: 'mdi-gamepad-variant' },
 				{ title: 'BLOG', url: '/admin/article', icon: 'mdi-gamepad-variant' },
 				{ title: 'FUNNEL', url: '/admin/funnel', icon: 'mdi-gamepad-variant' }
+			],
+			staticPages: [
+				{ title: 'All static pages', link: '/admin/static-pages' },
+				{ title: 'Add static page', link: '/admin/static-pages/add' }
 			],
 			casinoPage: [
 				{ title: 'All casino', link: '/admin/casino' },
