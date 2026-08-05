@@ -3,7 +3,9 @@ export const state = () => ({
 	lang: {
 		1: 'ru',
 		2: 'ua'
-	}
+	},
+	headers: {},
+	geo: 'WORLD'
 })
 export const mutations = {
 	setError(state, payload) {
@@ -11,6 +13,12 @@ export const mutations = {
 	},
 	clearError(state) {
 		state.error = null
+	},
+	setHeaders(state, payload) {
+		state.headers = payload || {}
+	},
+	setGeo(state, payload) {
+		state.geo = payload != null && payload !== '' ? payload : 'WORLD'
 	}
 }
 export const actions = {
@@ -19,6 +27,12 @@ export const actions = {
 	},
 	clearError({ commit }) {
 		commit('clearError')
+	},
+	setHeaders({ commit }, payload) {
+		commit('setHeaders', payload)
+	},
+	setGeo({ commit }, payload) {
+		commit('setGeo', payload)
 	}
 }
 export const getters = {
@@ -27,5 +41,8 @@ export const getters = {
 	},
 	lang(state) {
 		return state.lang
+	},
+	getGeo(state) {
+		return state.geo
 	}
 }

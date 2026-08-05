@@ -1,11 +1,2 @@
-[x] Casino
-[] Bonus
-[x] News
-[x] Vendors
-[x] Games
-[x] Currency
-[x] Language
-[x] Payments
-
-[] Создать миксины для списка постов
-[] Создать конфиги для общих типов постов
+[] Add mixin currentDate for components
+[] Add mixin mounted for components

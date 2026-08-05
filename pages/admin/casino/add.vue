@@ -30,6 +30,7 @@ export default {
 			meta_title: '',
 			description: '',
 			keywords: '',
+			robots: 'index,follow',
 			short_desc: '',
 			h1: '',
 			content: [],

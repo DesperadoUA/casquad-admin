@@ -1,0 +1,71 @@
+.pros_cons {
+  display: flex;
+  gap: 20px;
+}
+.pros, .cons {
+  flex: 1;
+  border: 1px solid var(--cayenne);
+  border-radius: var(--m);
+  max-width: 50%;
+  padding: 15px;
+}
+.pros_cons_title {
+  color: var(--cairo);
+  font-size: 20px;
+  position: relative;
+  padding-left: 30px;
+}
+.pros_cons_title::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  top: 10px;
+  left: 0;
+  position: absolute;
+}
+.pros_cons_title.pros_icon::before {
+  background: url(/img/success_pros.svg) center center no-repeat;
+}
+.pros_cons_title.cons_icon::before {
+  background: url(/img/pros_fail.svg) center center no-repeat;
+}
+.pros_list, .cons_list {
+  padding-left: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pros_list li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  top: 9px;
+  left: -30px;
+  background: url(/img/pros.svg) center center no-repeat;
+}
+.pros_cons .cons ul li::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  top: 9px;
+  left: -30px;
+  background: url(/img/cons_cros.svg) center center no-repeat;
+}
+.pros_cons .cons ul li, .pros_cons .pros ul li {
+  color: var(--cairo);
+  position: relative;
+  list-style: none;
+}
+@media (max-width: 1200px) {
+  .pros_cons {
+    flex-wrap: wrap;
+  }
+  .pros, .cons {
+    max-width: 100%;
+    width: 100%;
+    flex: none;
+  }
+}

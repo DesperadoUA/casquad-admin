@@ -27,6 +27,15 @@
 						action_key="description"
 					/>
 					<MM_Input v-if="data" :value="data.keywords" title="Keywords" :action="action" action_key="keywords" />
+					<!-- SEO: выбор индексации (index,follow | noindex,follow) -->
+					<MM_Options
+						v-if="data"
+						:value="data.robots || 'index,follow'"
+						:all_value="['index,follow', 'noindex,follow']"
+						title="Robots"
+						:action="action"
+						action_key="robots"
+					/>
 					<MM_Textarea
 						v-if="data"
 						:value="data.short_desc"

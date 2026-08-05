@@ -262,6 +262,17 @@
 										</v-sheet>
 									</v-col>
 									<v-col cols="1">
+										<img src="/img/Spain.webp" width="32" height="28" />
+										<v-sheet>
+											<v-switch
+												color="deep-orange darken-2"
+												v-model="geo_ES"
+												inset
+												@change="change('geo_ES')"
+											></v-switch>
+										</v-sheet>
+									</v-col>
+									<v-col cols="1">
 										<img src="/img/Romania.webp" width="32" height="28" />
 										<v-sheet>
 											<v-switch
@@ -294,6 +305,17 @@
 											></v-switch>
 										</v-sheet>
 									</v-col>
+									<v-col cols="1">
+										<img src="/img/CZ.webp" width="32" height="28" />
+										<v-sheet>
+											<v-switch
+												color="deep-orange darken-2"
+												v-model="geo_CZ"
+												inset
+												@change="change('geo_CZ')"
+											></v-switch>
+										</v-sheet>
+									</v-col>
 								</v-row>
 							</v-expansion-panel-content>
 						</v-expansion-panel>
@@ -312,7 +334,6 @@ export default {
 	data() {
 		return {
 			geo_GB: false,
-			geo_BD: false,
 			geo_AU: false,
 			geo_GR: false,
 			geo_IN: false,
@@ -335,6 +356,7 @@ export default {
 			geo_BE: false,
 			geo_PL: false,
 			geo_PT: false,
+			geo_ES: false,
 			geo_RO: false,
 			geo_NO: false,
 			geo_BR: false,
@@ -343,7 +365,6 @@ export default {
 	},
 	mounted() {
 		this.geo_GB = !!this.data.geo_GB
-		this.geo_BD = !!this.data.geo_BD
 		this.geo_AU = !!this.data.geo_AU
 		this.geo_GR = !!this.data.geo_GR
 		this.geo_IN = !!this.data.geo_IN
@@ -366,6 +387,7 @@ export default {
 		this.geo_BE = !!this.data.geo_BE
 		this.geo_PL = !!this.data.geo_PL
 		this.geo_PT = !!this.data.geo_PT
+		this.geo_ES = !!this.data.geo_ES
 		this.geo_RO = !!this.data.geo_RO
 		this.geo_NO = !!this.data.geo_NO
 		this.geo_BR = !!this.data.geo_BR
