@@ -8,6 +8,8 @@ function normalizePageMeta(pageMeta = {}) {
 		pros_cons_title: '',
 		pros_title: '',
 		cons_title: '',
+		screenshots: [],
+		screenshots_title: '',
 		...pageMeta
 	}
 }
@@ -22,7 +24,9 @@ function flattenPageMeta(data) {
 		cons: page_meta.cons,
 		pros_cons_title: page_meta.pros_cons_title,
 		pros_title: page_meta.pros_title,
-		cons_title: page_meta.cons_title
+		cons_title: page_meta.cons_title,
+		screenshots: page_meta.screenshots,
+		screenshots_title: page_meta.screenshots_title
 	}
 }
 
@@ -36,7 +40,9 @@ function packPageMeta(data) {
 			cons: data.cons || [],
 			pros_cons_title: data.pros_cons_title || '',
 			pros_title: data.pros_title || '',
-			cons_title: data.cons_title || ''
+			cons_title: data.cons_title || '',
+			screenshots: data.screenshots || [],
+			screenshots_title: data.screenshots_title || ''
 		}
 	}
 }

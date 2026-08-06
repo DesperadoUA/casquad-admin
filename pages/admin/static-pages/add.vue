@@ -62,7 +62,9 @@ export default {
 			cons: [],
 			pros_cons_title: '',
 			pros_title: '',
-			cons_title: ''
+			cons_title: '',
+			screenshots: [],
+			screenshots_title: ''
 		}
 		this.$store.dispatch('static_pages/setNewPost', this.data.body)
 	},

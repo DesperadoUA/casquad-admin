@@ -39,6 +39,13 @@
 				<MM_Options :value="data.label" :action="action" :all_value="labels" title="Labels" action_key="label" />
 				<MM_Input :value="data.video_title" :action="action" title="Video title" action_key="video_title" />
 				<MM_Multiple_Input_Image :value="data.video" :action="action" title="Video" action_key="video" />
+				<MM_Input :value="data.screenshots_title" :action="action" title="Screenshots title" action_key="screenshots_title" />
+				<MM_Multiple_Two_Input_Image
+					:value="data.screenshots"
+					:action="action"
+					title="Screenshots"
+					action_key="screenshots"
+				/>
 				<MM_Input :value="data.faq_title" :action="action" title="Faq title" action_key="faq_title" />
 				<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
 				<MM_Textarea :value="data.author_summary" :action="action" title="Author summary" action_key="author_summary" />

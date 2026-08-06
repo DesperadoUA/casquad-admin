@@ -139,6 +139,20 @@
 				/>
 				<MM_Input
 					v-if="data"
+					:value="data.screenshots_title"
+					title="Screenshots title"
+					:action="action"
+					action_key="screenshots_title"
+				/>
+				<MM_Multiple_Two_Input_Image
+					v-if="data"
+					:value="data.screenshots"
+					:action="action"
+					title="Screenshots"
+					action_key="screenshots"
+				/>
+				<MM_Input
+					v-if="data"
 					:value="data.pros_cons_title"
 					title="Pros/Cons block title"
 					:action="action"
