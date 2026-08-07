@@ -157,6 +157,29 @@
 						action_key="cons_title"
 					/>
 					<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
+					<!-- TOC: 1 ключ = 1 компонент; sources из TOC_SOURCES.page -->
+					<MM_Checkbox
+						v-if="data"
+						:value="data.toc_enabled || 0"
+						title="TOC Enabled"
+						:action="action"
+						action_key="toc_enabled"
+					/>
+					<MM_Toc_Levels
+						v-if="data"
+						:value="data.toc_levels || [2]"
+						title="TOC Levels"
+						:action="action"
+						action_key="toc_levels"
+					/>
+					<MM_Multi_Select
+						v-if="data"
+						:value="data.toc_sources || ['content']"
+						:all_value="tocSourceOptions"
+						title="TOC Sources"
+						:action="action"
+						action_key="toc_sources"
+					/>
 					<MM_Media_Library />
 				</v-col>
 			</v-row>
@@ -165,9 +188,15 @@
 </template>
 <script>
 import global from '~/mixins/global'
+import { TOC_SOURCES } from '~/constants/tocSources'
 export default {
 	name: 'commonAddStaticPage',
 	props: ['data', 'action'],
-	mixins: [global]
+	mixins: [global],
+	computed: {
+		tocSourceOptions() {
+			return TOC_SOURCES.page
+		}
+	}
 }
 </script>

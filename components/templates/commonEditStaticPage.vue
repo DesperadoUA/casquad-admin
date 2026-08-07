@@ -162,6 +162,29 @@
 				<MM_Multiple_Input v-if="data" :value="data.pros" :action="action" title="Pros" action_key="pros" />
 				<MM_Input v-if="data" :value="data.cons_title" title="Cons title" :action="action" action_key="cons_title" />
 				<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
+				<!-- TOC: 1 ключ = 1 компонент; sources из TOC_SOURCES.page -->
+				<MM_Checkbox
+					v-if="data"
+					:value="data.toc_enabled || 0"
+					title="TOC Enabled"
+					:action="action"
+					action_key="toc_enabled"
+				/>
+				<MM_Toc_Levels
+					v-if="data"
+					:value="data.toc_levels || [2]"
+					title="TOC Levels"
+					:action="action"
+					action_key="toc_levels"
+				/>
+				<MM_Multi_Select
+					v-if="data"
+					:value="data.toc_sources || ['content']"
+					:all_value="tocSourceOptions"
+					title="TOC Sources"
+					:action="action"
+					action_key="toc_sources"
+				/>
 				<MM_Media_Library />
 				</v-col>
 			</v-row>
@@ -171,12 +194,16 @@
 <script>
 import global from '~/mixins/global'
 import MM_Casino_Ref from '~/components/lib/MM_Casino_Ref'
+import { TOC_SOURCES } from '~/constants/tocSources'
 export default {
 	name: 'commonEditStaticPage',
 	props: ['data', 'action'],
 	mixins: [global],
 	components: { MM_Casino_Ref },
 	computed: {
+		tocSourceOptions() {
+			return TOC_SOURCES.page
+		},
 		pageCasinoRelative() {
 			if (!this.data) return { current_value: [], all_value: [] }
 			const v = this.data.page_casino

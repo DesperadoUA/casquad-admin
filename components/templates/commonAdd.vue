@@ -52,6 +52,29 @@
 					/>
 					<MM_Input v-if="data" :value="data.h1" title="H1" :action="action" action_key="h1" />
 					<MM_Rich_Text v-if="data" :value="data.content" title="Content" :action="action" action_key="content" />
+					<!-- TOC: 1 ключ = 1 компонент -->
+					<MM_Checkbox
+						v-if="data"
+						:value="data.toc_enabled || 0"
+						title="TOC Enabled"
+						:action="action"
+						action_key="toc_enabled"
+					/>
+					<MM_Toc_Levels
+						v-if="data"
+						:value="data.toc_levels || [2]"
+						title="TOC Levels"
+						:action="action"
+						action_key="toc_levels"
+					/>
+					<MM_Multi_Select
+						v-if="data"
+						:value="data.toc_sources || ['content']"
+						:all_value="tocSourceOptions"
+						title="TOC Sources"
+						:action="action"
+						action_key="toc_sources"
+					/>
 					<MM_Date v-if="data" :value="data.create_at" title="Create At" :action="action" action_key="create_at" />
 					<MM_Date v-if="data" :value="data.update_at" title="Update At" :action="action" action_key="update_at" />
 					<MM_Image v-if="data" :value="data.thumbnail" title="Thumbnail" :action="action" action_key="thumbnail" />
@@ -66,7 +89,16 @@
 import global from '~/mixins/global'
 export default {
 	name: 'commonAdd',
-	props: ['data', 'action'],
+	props: {
+		data: { type: Object, required: true },
+		action: { type: String, required: true },
+		tocSourceOptions: {
+			type: Array,
+			default() {
+				return ['content']
+			}
+		}
+	},
 	mixins: [global],
 	data() {
 		return {

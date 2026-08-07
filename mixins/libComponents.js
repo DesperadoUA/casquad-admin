@@ -31,6 +31,8 @@ import MM_Multiple_Three_Input_Image from '~/components/lib/MM_Multiple_Three_In
 import MM_Multiple_Three_Input from '~/components/lib/MM_Multiple_Three_Input'
 import MM_Nav_Menu from '~/components/lib/MM_Nav_Menu'
 import MM_Multiple_Input_Options from '~/components/lib/MM_Multiple_Input_Options'
+import MM_Toc_Levels from '~/components/lib/MM_Toc_Levels'
+import MM_Multi_Select from '~/components/lib/MM_Multi_Select'
 
 export default {
 	components: {
@@ -66,6 +68,8 @@ export default {
 		MM_Multiple_Three_Input_Image,
 		MM_Multiple_Three_Input,
 		MM_Nav_Menu,
-		MM_Multiple_Input_Options
+		MM_Multiple_Input_Options,
+		MM_Toc_Levels,
+		MM_Multi_Select
 	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </commonEdit>
+		<commonEdit v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" :toc-source-options="tocSourceOptions" /> </commonEdit>
 		<postMeta v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'"> </postMeta>
 		<relative v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateCurrentPost'" postType="CURRENCY" />
 		<v-container>

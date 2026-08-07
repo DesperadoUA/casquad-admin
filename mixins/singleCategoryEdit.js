@@ -4,6 +4,7 @@ import snackBar from '~/components/templates/snackbar'
 import postMeta from '~/components/templates/meta/Category'
 import postPreview from '~/components/lib/MM_Post_Preview'
 import confirmDelete from '~/components/templates/confirmDelete'
+import { TOC_SOURCES } from '~/constants/tocSources'
 
 export default {
 	layout: 'admin',
@@ -19,6 +20,11 @@ export default {
 				timeout: 5000
 			},
 			confirmDeleteIsShow: false
+		}
+	},
+	computed: {
+		tocSourceOptions() {
+			return TOC_SOURCES.category
 		}
 	},
 	methods: {

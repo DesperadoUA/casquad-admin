@@ -33,9 +33,10 @@ export default {
 	},
 	methods: {
 		change() {
+			// number 0|1 — как в meta schema API
 			const currenData = {
 				key: this.action_key,
-				value: this.currenData
+				value: this.currenData ? 1 : 0
 			}
 			this.$store.dispatch(this.action, currenData)
 		}

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<commonAdd v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateNewPost'" />
+		<commonAdd v-if="data.body" :data="data.body" :action="POST_TYPE + '/changeStateNewPost'" :toc-source-options="tocSourceOptions" />
 		<v-container>
 			<v-row>
 				<v-col class="offset-1 col-10 mt-5 mb-10">
@@ -16,6 +16,7 @@
 
 <script>
 import commonAdd from '~/components/templates/commonAdd.vue'
+import { TOC_SOURCES } from '~/constants/tocSources'
 export default {
 	name: 'singleFunnelAdd',
 	layout: 'admin',
@@ -39,6 +40,11 @@ export default {
 			thumbnail: ''
 		}
 		this.$store.dispatch(this.POST_TYPE + '/setNewPost', this.data.body)
+	},
+	computed: {
+		tocSourceOptions() {
+			return TOC_SOURCES.funnel
+		}
 	},
 	data() {
 		return {
