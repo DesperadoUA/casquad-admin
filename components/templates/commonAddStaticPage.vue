@@ -50,6 +50,14 @@
 						:action="action"
 						action_key="robots"
 					/>
+					<!-- SEO: попадание URL в sitemap (default on) -->
+					<MM_Checkbox
+						v-if="data"
+						:value="data.in_sitemap == null ? 1 : data.in_sitemap"
+						title="Include in Sitemap"
+						:action="action"
+						action_key="in_sitemap"
+					/>
 					<MM_Textarea
 						v-if="data"
 						:value="data.short_desc"
