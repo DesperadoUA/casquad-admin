@@ -25,7 +25,7 @@
 										:key="geoCode"
 										:href="'#geo-tab-' + geoCode"
 									>
-										{{ geoCode }}
+										{{ geoLabel(geoCode) }}
 										<span class="ml-1">({{ (lists[geoCode] || []).length }})</span>
 									</v-tab>
 								</v-tabs>
@@ -163,6 +163,10 @@ export default {
 		}
 	},
 	methods: {
+		geoLabel(code) {
+			const name = config.GEO_NAMES && config.GEO_NAMES[code]
+			return name ? `${name} (${code})` : code
+		},
 		async fetchAllCasinos() {
 			const user = this.$store.getters['user/getUser']
 			if (!user || !user.session) {

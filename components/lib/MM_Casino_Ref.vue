@@ -23,7 +23,9 @@
 										<v-col class="col-4">
 											<v-select
 												color="deep-orange darken-2"
-												:items="geo"
+												:items="geoItems"
+												item-text="text"
+												item-value="value"
 												v-model="localRefs[casino.id][index].value_2"
 												label="GEO"
 												@change="sync"
@@ -68,7 +70,10 @@ export default {
 	props: ['casinoList', 'casinoRef', 'action'],
 	data() {
 		return {
-			geo: config.GEO,
+			geoItems: (config.GEO || []).map((code) => ({
+				value: code,
+				text: config.GEO_NAMES && config.GEO_NAMES[code] ? `${config.GEO_NAMES[code]} (${code})` : code
+			})),
 			localRefs: {},
 			_syncing: false
 		}

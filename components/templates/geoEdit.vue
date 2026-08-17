@@ -8,312 +8,17 @@
 							<v-expansion-panel-header>GEO</v-expansion-panel-header>
 							<v-expansion-panel-content class="pt-4">
 								<v-row>
-									<v-col cols="1">
-										<img src="/img/GB.webp" width="32" height="28" />
-										<v-sheet>
+									<v-col v-for="item in geoItems" :key="item.key" cols="2" class="geo-item">
+										<img :src="item.img" width="32" height="28" :alt="item.name" :title="item.name" />
+										<div class="geo-name white--text">{{ item.name }}</div>
+										<v-sheet class="geo-switch">
 											<v-switch
 												color="deep-orange darken-2"
-												v-model="geo_GB"
+												v-model="switches[item.key]"
 												inset
-												@change="change('geo_GB')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/AU.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_AU"
-												inset
-												@change="change('geo_AU')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/CA.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_CA"
-												inset
-												@change="change('geo_CA')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/NL.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_NL"
-												inset
-												@change="change('geo_NL')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/DE.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_DE"
-												inset
-												@change="change('geo_DE')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/PH.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_PH"
-												inset
-												@change="change('geo_PH')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Italy.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_IT"
-												inset
-												@change="change('geo_IT')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/NZ.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_NZ"
-												inset
-												@change="change('geo_NZ')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/CH.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_CH"
-												inset
-												@change="change('geo_CH')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/GR.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_GR"
-												inset
-												@change="change('geo_GR')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/ZA.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_ZA"
-												inset
-												@change="change('geo_ZA')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Finland.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_FI"
-												inset
-												@change="change('geo_FI')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Sweden.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_SE"
-												inset
-												@change="change('geo_SE')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Malaysia.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_MY"
-												inset
-												@change="change('geo_MY')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Hungary.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_HU"
-												inset
-												@change="change('geo_HU')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/France.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_FR"
-												inset
-												@change="change('geo_FR')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/ID.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_ID"
-												inset
-												@change="change('geo_ID')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Croatia.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_HR"
-												inset
-												@change="change('geo_HR')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/IN.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_IN"
-												inset
-												@change="change('geo_IN')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Austria.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_AT"
-												inset
-												@change="change('geo_AT')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Belgium.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_BE"
-												inset
-												@change="change('geo_BE')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Poland.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_PL"
-												inset
-												@change="change('geo_PL')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Portugal.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_PT"
-												inset
-												@change="change('geo_PT')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Spain.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_ES"
-												inset
-												@change="change('geo_ES')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Romania.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_RO"
-												inset
-												@change="change('geo_RO')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Norway.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_NO"
-												inset
-												@change="change('geo_NO')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/Brazil.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_BR"
-												inset
-												@change="change('geo_BR')"
-											></v-switch>
-										</v-sheet>
-									</v-col>
-									<v-col cols="1">
-										<img src="/img/CZ.webp" width="32" height="28" />
-										<v-sheet>
-											<v-switch
-												color="deep-orange darken-2"
-												v-model="geo_CZ"
-												inset
-												@change="change('geo_CZ')"
-											></v-switch>
+												hide-details
+												@change="change(item.key)"
+											/>
 										</v-sheet>
 									</v-col>
 								</v-row>
@@ -327,80 +32,91 @@
 </template>
 <script>
 import global from '~/mixins/global'
+import config from '~/config'
 export default {
 	name: 'geoEdit',
 	props: ['data', 'action'],
 	mixins: [global],
 	data() {
-		return {
-			geo_GB: false,
-			geo_AU: false,
-			geo_GR: false,
-			geo_IN: false,
-			geo_ID: false,
-			geo_CA: false,
-			geo_NL: false,
-			geo_DE: false,
-			geo_ZA: false,
-			geo_PH: false,
-			geo_SE: false,
-			geo_IT: false,
-			geo_NZ: false,
-			geo_CH: false,
-			geo_FI: false,
-			geo_MY: false,
-			geo_HU: false,
-			geo_FR: false,
-			geo_HR: false,
-			geo_AT: false,
-			geo_BE: false,
-			geo_PL: false,
-			geo_PT: false,
-			geo_ES: false,
-			geo_RO: false,
-			geo_NO: false,
-			geo_BR: false,
-			geo_CZ: false
-		}
+		const geoItems = [
+			{ key: 'geo_GB', code: 'GB', img: '/img/GB.webp' },
+			{ key: 'geo_AU', code: 'AU', img: '/img/AU.webp' },
+			{ key: 'geo_CA', code: 'CA', img: '/img/CA.webp' },
+			{ key: 'geo_NL', code: 'NL', img: '/img/NL.webp' },
+			{ key: 'geo_DE', code: 'DE', img: '/img/DE.webp' },
+			{ key: 'geo_PH', code: 'PH', img: '/img/PH.webp' },
+			{ key: 'geo_IT', code: 'IT', img: '/img/Italy.webp' },
+			{ key: 'geo_NZ', code: 'NZ', img: '/img/NZ.webp' },
+			{ key: 'geo_CH', code: 'CH', img: '/img/CH.webp' },
+			{ key: 'geo_GR', code: 'GR', img: '/img/GR.webp' },
+			{ key: 'geo_ZA', code: 'ZA', img: '/img/ZA.webp' },
+			{ key: 'geo_FI', code: 'FI', img: '/img/Finland.webp' },
+			{ key: 'geo_SE', code: 'SE', img: '/img/Sweden.webp' },
+			{ key: 'geo_MY', code: 'MY', img: '/img/Malaysia.webp' },
+			{ key: 'geo_HU', code: 'HU', img: '/img/Hungary.webp' },
+			{ key: 'geo_FR', code: 'FR', img: '/img/France.webp' },
+			{ key: 'geo_ID', code: 'ID', img: '/img/ID.webp' },
+			{ key: 'geo_HR', code: 'HR', img: '/img/Croatia.webp' },
+			{ key: 'geo_IN', code: 'IN', img: '/img/IN.webp' },
+			{ key: 'geo_AT', code: 'AT', img: '/img/Austria.webp' },
+			{ key: 'geo_BE', code: 'BE', img: '/img/Belgium.webp' },
+			{ key: 'geo_PL', code: 'PL', img: '/img/Poland.webp' },
+			{ key: 'geo_PT', code: 'PT', img: '/img/Portugal.webp' },
+			{ key: 'geo_ES', code: 'ES', img: '/img/Spain.webp' },
+			{ key: 'geo_RO', code: 'RO', img: '/img/Romania.webp' },
+			{ key: 'geo_NO', code: 'NO', img: '/img/Norway.webp' },
+			{ key: 'geo_BR', code: 'BR', img: '/img/Brazil.webp' },
+			{ key: 'geo_CZ', code: 'CZ', img: '/img/CZ.webp' }
+		].map((item) => ({
+			...item,
+			name: config.GEO_NAMES[item.code] || item.code
+		}))
+		const switches = {}
+		geoItems.forEach((item) => {
+			switches[item.key] = false
+		})
+		return { geoItems, switches }
 	},
 	mounted() {
-		this.geo_GB = !!this.data.geo_GB
-		this.geo_AU = !!this.data.geo_AU
-		this.geo_GR = !!this.data.geo_GR
-		this.geo_IN = !!this.data.geo_IN
-		this.geo_ID = !!this.data.geo_ID
-		this.geo_CA = !!this.data.geo_CA
-		this.geo_NL = !!this.data.geo_NL
-		this.geo_DE = !!this.data.geo_DE
-		this.geo_ZA = !!this.data.geo_ZA
-		this.geo_PH = !!this.data.geo_PH
-		this.geo_SE = !!this.data.geo_SE
-		this.geo_IT = !!this.data.geo_IT
-		this.geo_NZ = !!this.data.geo_NZ
-		this.geo_CH = !!this.data.geo_CH
-		this.geo_FI = !!this.data.geo_FI
-		this.geo_MY = !!this.data.geo_MY
-		this.geo_HU = !!this.data.geo_HU
-		this.geo_FR = !!this.data.geo_FR
-		this.geo_HR = !!this.data.geo_HR
-		this.geo_AT = !!this.data.geo_AT
-		this.geo_BE = !!this.data.geo_BE
-		this.geo_PL = !!this.data.geo_PL
-		this.geo_PT = !!this.data.geo_PT
-		this.geo_ES = !!this.data.geo_ES
-		this.geo_RO = !!this.data.geo_RO
-		this.geo_NO = !!this.data.geo_NO
-		this.geo_BR = !!this.data.geo_BR
-		this.geo_CZ = !!this.data.geo_CZ
+		this.geoItems.forEach((item) => {
+			this.switches[item.key] = !!this.data[item.key]
+		})
 	},
 	methods: {
 		change(key) {
-			const currenData = {
-				key: key,
-				value: this[key]
-			}
-			this.$store.dispatch(this.action, currenData)
+			this.$store.dispatch(this.action, {
+				key,
+				value: this.switches[key]
+			})
 		}
 	}
 }
 </script>
+<style scoped>
+.geo-item {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.geo-name {
+	font-size: 11px;
+	line-height: 1.2;
+	margin: 4px 0 2px;
+	min-height: 28px;
+}
+.geo-switch {
+	display: flex;
+	justify-content: center;
+	background: transparent !important;
+}
+.geo-switch >>> .v-input {
+	margin: 0;
+	padding: 0;
+	flex: none;
+}
+.geo-switch >>> .v-input__slot {
+	margin: 0;
+	justify-content: center;
+}
+</style>
