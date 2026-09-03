@@ -114,6 +114,7 @@
 					action_key="characters_progressive"
 				/>
 				<MM_Characters_Game :value="data.symbols" :action="action" title="Symbols" action_key="symbols" />
+				<MM_Input :value="data.screenshots_title" :action="action" title="Screenshots title" action_key="screenshots_title" />
 				<MM_Multiple_Two_Input_Image
 					:value="data.screenshots"
 					:action="action"

@@ -122,6 +122,29 @@
 					<MM_Image v-if="data" :value="data.social_img" title="Social Img" :action="action" action_key="social_img" />
 					<MM_Input v-if="data" :value="data.faq_title" title="Faq title" :action="action" action_key="faq_title" />
 					<MM_Multiple_Input_Text :value="data.faq" :action="action" title="Faq" action_key="faq" />
+					<MM_Input
+						v-if="data"
+						:value="data.pros_cons_title"
+						title="Pros/Cons block title"
+						:action="action"
+						action_key="pros_cons_title"
+					/>
+					<MM_Input
+						v-if="data"
+						:value="data.pros_title"
+						title="Pros title"
+						:action="action"
+						action_key="pros_title"
+					/>
+					<MM_Input
+						v-if="data"
+						:value="data.cons_title"
+						title="Cons title"
+						:action="action"
+						action_key="cons_title"
+					/>
+					<MM_Multiple_Input v-if="data" :value="data.pros" :action="action" title="Pros" action_key="pros" />
+					<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
 					<MM_Textarea
 						:value="data.author_summary"
 						:action="action"
@@ -142,29 +165,6 @@
 						title="Screenshots"
 						action_key="screenshots"
 					/>
-					<MM_Input
-						v-if="data"
-						:value="data.pros_cons_title"
-						title="Pros/Cons block title"
-						:action="action"
-						action_key="pros_cons_title"
-					/>
-					<MM_Input
-						v-if="data"
-						:value="data.pros_title"
-						title="Pros title"
-						:action="action"
-						action_key="pros_title"
-					/>
-					<MM_Multiple_Input v-if="data" :value="data.pros" :action="action" title="Pros" action_key="pros" />
-					<MM_Input
-						v-if="data"
-						:value="data.cons_title"
-						title="Cons title"
-						:action="action"
-						action_key="cons_title"
-					/>
-					<MM_Multiple_Input v-if="data" :value="data.cons" :action="action" title="Cons" action_key="cons" />
 					<!-- TOC: 1 ключ = 1 компонент; sources из TOC_SOURCES.page -->
 					<MM_Checkbox
 						v-if="data"
