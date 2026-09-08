@@ -18,7 +18,7 @@
 			</v-row>
 		</v-container>
 		<snackBar :status="snackbar.status" :text="snackbar.text" :timeout="snackbar.timeout" />
-		<postPreview v-if="data.body" slug="bonus" :permalink="data.body.permalink" />
+		<postPreview v-if="data.body" slug="news" :permalink="data.body.permalink" />
 		<confirmDelete v-if="confirmDeleteIsShow" @delete="confirmDelete" @cancel="cancel" />
 	</div>
 </template>
