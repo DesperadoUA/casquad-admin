@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+		"start": "/usr/local/node14/bin/node node_modules/nuxt/bin/nuxt.js start",
     "generate": "nuxt generate"
   },
   "dependencies": {

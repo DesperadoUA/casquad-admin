@@ -1,3 +1,5 @@
+import config from '~/config'
+
 export default {
 	head() {
 		return {
@@ -59,11 +61,11 @@ export default {
 				},
 				{
 					property: 'og:image',
-					content: this.data.body.social_img || 'https://casquads.com/img/logo-2.svg'
+					content: this.data.body.social_img || `${config.BASE_URL[config.LANG]}/img/logo-2.svg`
 				},
 				{
 					property: 'og:image:secure_url',
-					content: this.data.body.social_img || 'https://casquads.com/img/logo-2.svg'
+					content: this.data.body.social_img || `${config.BASE_URL[config.LANG]}/img/logo-2.svg`
 				},
 				{
 					name: 'twitter:card',
@@ -83,7 +85,7 @@ export default {
 				},
 				{
 					name: 'twitter:image',
-					content: this.data.body.social_img || 'https://casquads.com/img/logo-2.svg'
+					content: this.data.body.social_img || `${config.BASE_URL[config.LANG]}/img/logo-2.svg`
 				},
 				{
 					name: 'apple-mobile-web-app-title',
