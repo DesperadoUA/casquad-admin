@@ -5,19 +5,21 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-		"start": "/usr/local/node14/bin/node node_modules/nuxt/bin/nuxt.js start",
+    "start": "/usr/local/node14/bin/node node_modules/nuxt/bin/nuxt.js start",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.14",
+    "@tinymce/tinymce-vue": "^3.2.8",
     "axios": "^0.21.1",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
-    "quill-better-table": "^1.2.10",
-    "vue-quill-editor": "^3.0.6",
+    "regenerator-runtime": "^0.13.7",
+    "tinymce": "^6.8.4",
     "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
+    "@babel/preset-env": "7.12.11",
     "@nuxtjs/vuetify": "^1.11.3"
   }
 }
